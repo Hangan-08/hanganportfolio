@@ -1,0 +1,21 @@
+body{
+  background-color: blue;
+}
+.search_area{
+  box-sizing: border-box;
+  text-decoration: none;
+  outline: none;
+  list-style: none;
+}
+.search_area input[type=text]{
+  border: 0;
+  padding: 0;
+  width: 0;
+  height: 40px;
+  transition: all 0.5s ease;
+  outline: none;
+  border-radius: 10px;
+}
+.search_desktop input{
+ outline: none;
+}

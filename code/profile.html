@@ -1,0 +1,515 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Hồ sơ của tôi</title>
+	<meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="slick/slick.css">
+    <link rel="stylesheet" type="text/css" href="slick/slick-theme.css">
+    <link rel="stylesheet" type="text/css" href="profile.css">
+   <link rel="stylesheet" type="text/css" href="aos/aos.css">
+    <link rel="stylesheet" type="text/css" href="fontawesome/css/all.min.css">
+    <script type="text/javascript" src="js/jquery.min.js"></script>
+     <script type="text/javascript" src="aos/aos.js"></script>
+    <script type="text/javascript" src="js/popper.js"></script>
+    <script type="text/javascript" src="js/bootstrap.min.js"></script>
+    <script src="https://kit.fontawesome.com/c46877355a.js" crossorigin="anonymous"></script>
+</head>
+<body>
+<!--Menu-->
+    <nav class="navbar navbar-expand-sm menu py-0">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#myNavBar" aria-label="Toggle navigation">
+             <span><i class="fas fa-bars"></i></span>
+        </button>
+        <div class="collapse navbar-collapse" id="myNavBar">
+<!--icon mobile-->
+  <!--tìm kiếm-->
+            <div class="bg-white d-block d-sm-none rounded position-relative w-100 text-center mt-2 mb-2 mobile_icon">
+            <input class="w-75 rounded p-2" type="text" placeholder="Search..."><a href="search result.html" class="text-dark text-decoration-none">
+            <i class="fas fa-search " aria-hidden="true"></i></a>
+            </div>
+  <!--đăng nhập và giỏ hàng mobile-->
+            <div class="d-block d-sm-none p-2 pl-3">
+                 <button type="button" class="bg-transparent border-0 p-0 text-white" data-toggle="modal" data-target="#mobileModal">
+            <i class="fas fa-user"></i> Đăng nhập
+            </button>
+            <div class="modal fade" id="mobileModal" >
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="mobileModalLabel">Đăng nhập</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-auto">
+        <form action="" class="form mb-5" id="signin">
+      <h1 class="form_title mb-2"></h1>
+      <p class="form_description"></p>
+
+      <div class="form_group mb-5">
+        <input id="email" class="form_input" placeholder="Email hoặc SĐT" autocomplete="off">
+        <p id="warning_input" class="mr-auto"></p>
+        <label for="email" class="form_label">Tên đăng nhập</label>
+      </div>
+
+       <div class="form_group mb-3">
+        <input type="password" id="password" class="form_input" placeholder="Mật khẩu" autocomplete="off">
+        <p id="warning_input2" class="mr-auto"></p>
+        <label for="password" class="form_label">Mật khẩu</label>
+      </div>
+      <p class="text-right remind"><a href="#">Quên mật khẩu?</a><br><a href="signup.html">Chưa có tài khoản? Đăng kí ngay!</a></p>
+     <a href="profile.html" class="btn_02">
+        <span>Đăng nhập →</span>
+        </a>
+    </form>
+      </div>
+    </div>
+  </div>
+</div> &nbsp;
+                 <button type="button" class="bg-transparent border-0 p-0 text-white text-decoration-none" data-toggle="modal" data-target="#mobileModal_01">
+            <i class="fas fa-shopping-cart"></i> Giỏ hàng
+            </button>
+            <div class="modal fade shopping_cart" id="mobileModal_01" >
+  <div class="modal-dialog modal-xl">
+    <div class="modal-content mycart mx-auto" >
+      <div class="modal-header">
+        <h5 class="modal-title" id="mobileModalLabel_01">Giỏ hàng</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-auto p-4 ">
+        <table>
+          <thead>
+            <tr>
+              <th class="p-1">Sản phẩm</th>
+              <th class="p-1"></th>
+              <th class="p-1">Số lượng</th>
+              <th class="p-1">Thành tiền</th>
+              <th class="p-1">Hủy</th>
+            </tr>
+          </thead>
+          <tbody class="w-100">
+            <tr>
+              <td class="w-25 cart_01"><img class="rounded" src="img/product_01.jpg" width="100%"></td>
+              <td class="p-1">Decal dán tường</td>
+              <td class="quantity p-1"><input type="number" name="number" min="0"></td>
+              <td class="p-1">180 000đ</td>
+              <td class="p-1"><i class="fas fa-trash-alt remove"></i></td>
+            </tr>
+             <tr>
+              <td class="w-25 cart_01"><img class="rounded" src="img/product_02.jpg" width="100%"></td>
+              <td class="p-1">Thảm treo tường</td>
+              <td class="quantity p-1"><input type="number" name="number"  min="0"></td>
+              <td class="p-1">310 000đ</td>
+              <td class="p-1"><i class="fas fa-trash-alt remove"></i></td>
+            </tr>
+             <tr>
+              <td class="w-25 cart_01"><img class="rounded" src="img/product_03.jpg" width="100%"></td>
+              <td class="p-1">Hộp vải</td>
+              <td class="quantity p-1"><input type="number" name="number" min="0" ></td>
+              <td class="p-1">210 000đ</td>
+              <td class="p-1"><i class="fas fa-trash-alt remove"></i></td>
+            </tr>
+            <br>
+            <tr class="border-top">
+              <td class="font-weight-bold cart_01">Tổng tiền</td>
+              <td></td>
+              <td></td>
+              <td>870.000đ</td>
+              
+            </tr>
+          </tbody>
+        </table>
+        <a href="checkout.html" class="btn_02 mt-3">
+        <span>Tiến hành thanh toán →</span>
+        </a>
+      </div>
+    </div>
+  </div>
+</div>
+            </div>
+<!--end icon mobile-->
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item active">
+                    <a class="nav-link p-3  text-white" href="index.html">Trang chủ </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link p-3 text-white-50" href="index.html#aboutus">Về chúng tôi</a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link p-3 dropdown-toggle text-white-50" href="#" id="navbarDropdown" role="button" data-toggle="dropdown">
+                        Sản phẩm
+                    </a>
+                    <div class="dropdown-menu">
+                        <a class="dropdown-item" href="newarrival.html">Bộ sưu tập</a>
+                        <a class="dropdown-item" href="#">Để bàn</a>
+                        <a class="dropdown-item" href="#">Treo tường</a>
+                        <a class="dropdown-item" href="#">Đèn</a>
+                        <a class="dropdown-item" href="#">Thảm trải bàn</a>
+                        <a class="dropdown-item" href="#">Hộp/Giỏ chứa đồ</a>
+                    </div>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link p-3 dropdown-toggle text-white-50" href="#" id="navbarDropdown"  data-toggle="dropdown">
+                        Liên hệ
+                    </a>
+                    <div class="dropdown-menu">
+                        <a class="dropdown-item" href="#">Liên hệ</a>
+                        <a class="dropdown-item" href="FAQs.html">Câu hỏi thường gặp</a>
+                    </div>
+                </li>
+            </ul>
+<!--thanh tìm kiếm-->
+            <div class="position-relative search_area">
+        <div class=" d-none d-sm-block position-absolute ">
+            <i class="fas fa-search change text-white" data-toggle="collapse" href="#search_desktop" role="button" aria-expanded="false" ></i>
+
+          <div class="collapse position-absolute" id="search_desktop">
+          <div class="search_container px-3  search_desktop d-flex justify-content-between rounded">
+          <input class="border-0 w-75" type="text" placeholder="Tìm kiếm..."><a href="search result.html"><i class="fas fa-search ml-auto text-dark"></i></a>
+          </div>
+          </div>
+            </div>
+          </div>
+<!--giỏ hàng-->
+            <div class="icon_02 d-none d-sm-block">
+             <button type="button" class="bg-transparent border-0 p-0" data-toggle="modal" data-target="#desktopModal">
+            <i class="fas fa-shopping-cart text-white"></i>
+            </button>
+            <div class="modal fade shopping_cart" id="desktopModal" >
+  <div class="modal-dialog modal-xl">
+    <div class="modal-content mycart mx-auto" >
+      <div class="modal-header">
+        <h5 class="modal-title" id="desktopModalLabel">Giỏ hàng</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-auto p-4 ">
+        <table>
+          <thead>
+            <tr>
+              <th class="p-1">Sản phẩm</th>
+              <th class="p-1"></th>
+              <th class="p-1">Số lượng</th>
+              <th class="p-1">Thành tiền</th>
+              <th class="p-1">Hủy</th>
+            </tr>
+          </thead>
+          <tbody class="w-100">
+            <tr>
+              <td class="w-25 cart_01"><img class="rounded" src="img/product_01.jpg" width="100%"></td>
+              <td class="p-1">Decal dán tường</td>
+              <td class="quantity p-1"><input type="number" name="number" min="0"></td>
+              <td class="p-1">180 000đ</td>
+              <td class="p-1"><i class="fas fa-trash-alt remove"></i></td>
+            </tr>
+             <tr>
+              <td class="w-25 cart_01"><img class="rounded" src="img/product_02.jpg" width="100%"></td>
+              <td class="p-1">Thảm treo tường</td>
+              <td class="quantity p-1"><input type="number" name="number"  min="0"></td>
+              <td class="p-1">310 000đ</td>
+              <td class="p-1"><i class="fas fa-trash-alt remove"></i></td>
+            </tr>
+             <tr>
+              <td class="w-25 cart_01"><img class="rounded" src="img/product_03.jpg" width="100%"></td>
+              <td class="p-1">Hộp vải</td>
+              <td class="quantity p-1"><input type="number" name="number" min="0" ></td>
+              <td class="p-1">210 000đ</td>
+              <td class="p-1"><i class="fas fa-trash-alt remove"></i></td>
+            </tr>
+            <br>
+            <tr class="border-top">
+              <td class="font-weight-bold cart_01">Tổng tiền</td>
+              <td></td>
+              <td></td>
+              <td>870.000đ</td>
+              
+            </tr>
+          </tbody>
+        </table>
+        <a href="checkout.html" class="btn_02 mt-3">
+        <span>Tiến hành thanh toán →</span>
+        </a>
+      </div>
+    </div>
+  </div>
+</div>
+<!--Sign in modal-->
+            <button type="button" class="bg-transparent border-0 p-0" data-toggle="modal" data-target="#desktopModal_01">
+            <i class="fas fa-user text-white"></i>
+            </button>
+            <div class="modal fade" id="desktopModal_01" >
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="desktopModalLabel">Đăng nhập</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-auto">
+        <form action="" class="form mb-5" id="signin">
+      <h1 class="form_title mb-2"></h1>
+      <p class="form_description"></p>
+
+      <div class="form_group mb-5">
+        <input id="email_01" class="form_input" placeholder="Email hoặc SĐT" autocomplete="off">
+        <p id="warning_input3" class="mr-auto"></p>
+        <label for="email_01" class="form_label">Tên đăng nhập</label>
+      </div>
+
+       <div class="form_group mb-3">
+        <input type="password" id="password_01" class="form_input" placeholder="Mật khẩu" autocomplete="off">
+        <p id="warning_input4" class="mr-auto"></p>
+        <label for="password_01" class="form_label">Mật khẩu</label>
+      </div>
+      <p class="text-right remind"><a href="#">Quên mật khẩu ?</a><br><a href="signup.html">Chưa có tài khoản? Đăng kí ngay !</a></p>
+     <a href="profile.html" class="btn_02">
+        <span>Đăng nhập →</span>
+        </a>
+    </form>
+      </div>
+    </div>
+  </div>
+</div>
+<!--end signin modal--->
+        </div>
+        </div>
+    </nav>
+<!--End menu-->
+<!--breadcrumb-->
+    <nav aria-label="breadcrumb" class="breadcrumb">
+    <ol class="breadcrumb">
+      <li class="breadcrumb-item"><a href="index.html" class="text-decoration-none">Trang chủ</a></li>
+      <li class="breadcrumb-item active" aria-current="page">Hồ sơ của tôi</li>
+    </ol>
+    </nav>
+<!--body-->
+<div class="container">
+    <div class="row">
+        <div class="col-md-6">
+            <div>
+                <div class="avatar position-relative">
+                    <div class="avatar_01 position-absolute"></div>
+                    <div class="avatar_02 position-absolute">
+                        <div class="position-relative">
+                        <img src="img/user.png" width="100%">
+                        <div class="overlay position-absolute">
+                            <i class="fas fa-camera"></i>
+                        </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div>
+                <div class="avatar_infor position-relative">
+                    <div>
+                        <p class="avatar_01">CHOO CHOO <span><i class="fas fa-edit"></i></span></p>
+                        <span class="avatar_02">Thành viên vàng</span>
+                    </div>
+                    <div class="mt-5">
+                        <p>Sinh nhật : 23.0.8.2001<br>
+                        E-mail : noisycatcoon@gmail.com<br>
+                        Số điện thoại : +84 000 000
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!--quản lí địa chỉ-->
+<div class="container mt-5 ">
+    <div class="add_manage">
+        <a href="#address" data-toggle="collapse" class="d-flex justify-content-between text-decoration-none mx-auto">
+        <p>Quản lý địa chỉ</p> 
+        <span><i class="fas fa-caret-down"></i></span> 
+        </a>
+        <div id="address" class="collapse mx-auto">
+            <div class="bg-light p-3 mt-2">
+            <h5>Địa chỉ 1 <span class="add_01"><i class="fas fa-edit"></i></span></h5>
+            275 Nguyen Van Dau<br>
+            Quan Binh Thanh, TP.HCM
+            </div>
+            <div class="bg-light p-3 mt-2">
+            <h5>Địa chỉ 2 <span class="add_01"><i class="fas fa-edit"></i></span></h5>
+            03 Ton Duc Thang<br>
+            phuong Ben Nghe, Quan 1, TP.HCM
+            </div>
+        </div>
+    </div>
+    <div class="ord_manage mt-5">
+        <a href="#order" data-toggle="collapse" class="d-flex justify-content-between text-decoration-none mx-auto">
+        <p>Quản lý đơn hàng</p> 
+        <span><i class="fas fa-caret-down"></i></span> 
+        </a>
+        <div id="order" class="collapse mx-auto">
+            <div class="bg-light p-3 mt-2">
+            <p>Bạn hiện không có đơn hàng nào</p>
+            </div>
+        </div>
+    </div>
+</div>
+<!--footer-->
+<div class="container-fluid footer_contain mx-0 mt-5">
+        
+            <div class="row p-5 ">
+                <div class="col-md-12 d-block mb-5 text-center">
+                    <div><h4 class="font-weight-normal" >Đăng kí để nhận ưu đãi và nhiều chương trình hấp dẫn khác</h4></div>
+
+                    <div class="mt-3 sub_form">
+                    <input type="text" placeholder="E-mail hoặc số điện thoại">
+                    <button type="button"><i class="fas fa-chevron-right"></i></button>
+                </div>
+                </div>
+                <div class="col-12 col-sm-6 col-md-4 col-lg-3 col-xl-3">
+                    <h5>Về Cozy garden</h5>
+                    
+                    <ul class="nav  footer">
+                        <li class="nav-item"><a href="#aboutus" class="nav-link">Giới thiệu về Cozy garden</a></li>
+                        <li class="nav-item"><a href="#" class="nav-link">Khách hàng nói gì về chúng tôi</a></li>
+                        <li class="nav-item"><a href="#" class="nav-link">Trang trí phòng ngủ</a></li>
+                        
+                    </ul>
+                        </div>
+                        <div class="col-12 col-sm-6 col-md-4 col-lg-3 col-xl-3 footer">
+                
+                    <h5>Sản phẩm</h5>
+            
+                    <ul class="nav footer">
+                        <li class="nav-item"><a href="newarrival.html" class="nav-link">Bộ sưu tập</a></li>
+                        <li class="nav-item"><a href="#" class="nav-link">Để bàn</a></li>
+                        <li class="nav-item"><a href="#" class="nav-link">Treo tường</a></li>
+                        <li class="nav-item"><a href="#" class="nav-link">Đèn</a></li>
+                        <li class="nav-item"><a href="#" class="nav-link">Thảm trải bàn</a></li>
+                        <li class="nav-item"><a href="#" class="nav-link">Hộp/Giỏ chứa đồ</a></li>
+                        
+                    </ul>
+                    
+                </div>
+                <div class="col-12 col-sm-6 col-md-4 col-lg-3 col-xl-3 footer">
+                    <h5>Chăm sóc  khách hàng</h5>
+                    <ul class="nav footer">
+                        <li class="nav-item"><a href="#" class="nav-link">Liên hệ</a></li>
+
+                        <li class="nav-item"><a href="FAQs.html" class="nav-link">Câu hỏi thường gặp</a></li>
+                        
+                    </ul>
+
+                </div>
+                <div class="col-12 col-sm-6 col-md-4 col-lg-3 col-xl-3 footer">
+                    <H5>Kết nối với chúng tôi</H5>
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-youtube"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <h5>Phương thức thanh toán</h5>
+                    <div class="payment">
+                    <a href="#"><i class="fab fa-cc-visa"></i></a> 
+                    <a href="#"><i class="fab fa-cc-mastercard"></i></a> 
+                    <a href="#"><i class="fab fa-cc-jcb"></i></a>
+                    </div>
+
+                </div>
+                <div class=" col-12 text-center d-block mt-3">
+                    <img src="img/logo.png">
+                <div class="mx-auto">
+                    <p>Điện thoại : +84 000 000<br>Địa chỉ : 47 Ngô Chí Quốc, Tam Bình, Thủ Đức. </p>
+                </div>
+                <div class="mx-auto">
+                    <p>all right reserved 2021<br>design registration no.23082001-0001</p>
+                </div>
+                </div>
+            </div>
+    
+        
+    </div>
+<!--trở về đầu trang-->
+    <button id="backtotop"><i class="fas fa-chevron-up"></i></button>
+<!--hover vào menu item xổ ra-->
+    <script type="text/javascript">
+    $(document).ready(function() {
+
+        $('.dropdown').hover(function() {
+            $(this).find('.dropdown-menu').first().stop(true, true).delay(100).slideDown();
+        }, function() {
+            $(this).find('.dropdown-menu').first().stop(true, true).delay(50).slideUp()
+        });
+
+    });
+    </script>
+<!--thanh tìm kiếm mở rộng-->
+    <script>
+       
+        $(".fa-search").click(function(){
+            $(".search_area, .input").toggleClass("active");
+            $("input[type=text]").toggleClass("active");
+        });
+    </script>
+<!--validate form-->
+  <script type="text/javascript">
+  $(document).ready(function(){
+  document.getElementById('email').onblur = function(){
+    if (this.value == "") {
+      this.style.border = '2px solid red';
+      document.getElementById('warning_input').innerHTML = 'Vui lòng điền tên đăng nhập!';
+    }else{
+        this.style.border = '2px solid lightgray';
+      document.getElementById('warning_input').innerHTML = "";
+    }
+  }
+  document.getElementById('password').onblur = function(){
+    if (this.value == "") {
+      this.style.border = '2px solid red';
+      document.getElementById('warning_input2').innerHTML = 'Vui lòng điền mật khẩu!';
+    }else{
+        this.style.border = '2px solid lightgray';
+      document.getElementById('warning_input2').innerHTML = "";
+    }
+  }
+})
+</script>
+<script type="text/javascript">
+  $(document).ready(function(){
+  document.getElementById('email_01').onblur = function(){
+    if (this.value == "") {
+      this.style.border = '2px solid red';
+      document.getElementById('warning_input3').innerHTML = 'Vui lòng điền tên đăng nhập!';
+    }else{
+        this.style.border = '2px solid lightgray';
+      document.getElementById('warning_input3').innerHTML = "";
+    }
+  }
+  document.getElementById('password_01').onblur = function(){
+    if (this.value == "") {
+      this.style.border = '2px solid red';
+      document.getElementById('warning_input4').innerHTML = 'Vui lòng điền mật khẩu!';
+    }else{
+        this.style.border = '2px solid lightgray';
+      document.getElementById('warning_input4').innerHTML = "";
+    }
+  }
+})
+</script>
+<!--back to top button-->
+  <script type="text/javascript">
+      $(document).ready(function(){
+        $(window).scroll(function(){
+            if ($(this).scrollTop() > 40) {
+                $('#backtotop').fadeIn();
+            }else{
+                $('#backtotop').fadeOut();
+            }
+        });
+        $('#backtotop').click(function(){
+            $('html,body').animate({scrollTop : 0},800);
+        })
+      })
+  </script>
+</body>
+</html>

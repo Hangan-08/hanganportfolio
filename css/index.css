@@ -1,0 +1,195 @@
+body{
+    background-image: url('../img/Artboard\ 1.jpg');
+    background-size: cover;
+    background-position-y: bottom;
+    background-attachment: fixed;
+    color: white;
+    padding: 0;
+    margin: 0;
+    
+    
+}
+.mytitle{
+    font-family: svn-gotham black;
+    
+}
+.my_body{
+    
+    
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 1rem;
+    box-shadow: 1rem 1rem 1rem rgba(0,0, 0, 0.5);
+    border-top: 1px solid rgba(255, 255, 255, 0.5);
+    backdrop-filter: blur(5px);
+    border-left: 1px solid rgba(255, 255, 255, 0.5);
+    ;
+}
+.mytitle .reveal{
+    background-color: palevioletred;
+    padding: 0 0.5rem 0.1rem 0.2rem;
+    animation: reveal 1.5s 1s forwards;
+    /* animation: name duration timing-function delay iteration-count direction fill-mode; */
+    transform: scaleX(0);
+    transform-origin: right;
+    overflow: hidden;
+}
+.reveal h2{
+    transform-origin: left;
+    position: relative;
+}
+.reveal h2::before{
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: palevioletred;
+    height: 105%;
+    width: 100%;
+    z-index: 2;
+    transform-origin: right;
+    animation: reveal 1.5s 2s reverse forwards;
+}
+@keyframes reveal{
+    0%{
+        transform: scaleX(0);
+    }
+    100%{
+        transform :scaleX(1)
+    }
+}
+.home_menu h3{
+    margin-top: 2rem;
+    opacity: 0;
+    transform: translateY(20%);
+    animation: reveal_2 1s 2.3s forwards;
+    position: relative;
+}
+@keyframes reveal_2{
+    0%{
+        opacity: 0;
+        transform: translateY(20%);
+    }
+    100%{
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+.hm_01::before, .hm_02::before, .hm_03::before, .hm_04::before{
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: palevioletred;
+    z-index: 2;
+    opacity: 0;
+    transition: 0.5s;
+    transform: translateY(1rem);
+}
+.hm_01::before{
+    content: 'Basic information';
+}
+.hm_02::before{
+    content: 'Artworks & Webpages';
+}
+.hm_03::before{
+    content: 'Know me better';
+}
+.hm_04::before{
+    content: 'Nice to hear from you';
+}
+.home_menu .hm_02:hover::before, .hm_03:hover::before, .hm_04:hover::before, .hm_01:hover::before{
+    opacity: 1;
+    transform: translateY(0);
+}
+.fas{
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 0.4rem;
+    box-shadow: 1rem 1rem 1rem rgba(0,0, 0, 0.5);
+    border-top: 1px solid rgba(255, 255, 255, 0.5);
+    border-left: 1px solid rgba(255, 255, 255, 0.5);
+    backdrop-filter: blur(5px);
+    padding: 0.5rem;
+    cursor: pointer;
+    z-index: 1000;
+}
+.toggle{
+    background-color: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(8px);
+    width: 0;
+    height: 0;
+    position: absolute;
+    top: 0;
+    right: 0;
+    z-index: 5;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    transition: 1s;
+    opacity: 0;
+}
+.hide{
+    width: 0;
+    height: 0;
+    transition: 1s;
+}
+.toggle ul{
+ list-style-type: none;
+}
+.overlay{
+    height: 100vh;
+    width: 100vw;
+    transition: 1s;
+    opacity: 1;
+}
+li a{
+    color: white;
+    position: relative;
+}
+li a:hover{
+    text-decoration: none;
+    color: white;
+}
+li a::before{
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 30%;
+    background-color: palevioletred;
+    z-index: -1;
+    transform: translateY(200%);
+    transition: .2s;
+
+}
+li a:hover::before{
+    width: 100%;
+}
+ul li .span1{
+    height: 50px;
+    width: 50px;
+    color: palevioletred;
+    background-color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    cursor: pointer;
+    
+}
+ul li .span1:hover{
+    background-color: palevioletred;
+    color: white;
+    transition: 0.5s;
+}
+@media screen and (max-width: 480px){
+    h1, h2, h3, .h1, .h2, .h3{
+        font-size: 20px !important;
+    }
+    .my_body{
+        flex-direction: column;
+    }
+}

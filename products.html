@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>My projects</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.css" />
+    <link rel="stylesheet" type="text/css" href="slick/slick.css" />
+    <link rel="stylesheet" type="text/css" href="slick/slick-theme.css" />
+    <link rel="stylesheet" type="text/css" href="css/all.css" />
+    <link rel="stylesheet" type="text/css" href="fontawesome/css/all.min.css" />
+    <link rel="stylesheet" type="text/css" href="css/product.css" />
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    
+  </head>
+  <body>
+      <div class="text-right h3 mr-5 mt-3 clickhere"><i class="fas fa-bars"></i><div class="toggle">
+          <ul class="mytitle d-flex flex-column">
+              <li><a href="index.html">Home</a></li>
+              <li><a href="abtme.html">About me</a></li>
+              <li><a href="products.html">My projects</a></li>
+              <li><a href="exp.html">Interesting experiences</a></li>
+              <li><a href="contact.html">Contact</a></li>
+              <li class="mt-3 align-self-center"><div class="span1">&times;</div></li>
+          </ul>
+      </div></div>
+      <h1 class="text-center mytitle">.my projects</h1>
+<div class="container p-5">
+    <div class="my_body p-5 rounded-lg">
+        <h3 class="text-center">Artworks</h3>
+        <p class="font-italic text-center">Some use mockup</p>
+        <div class="center mt-5">
+            <div class="my_body p-3"><img src="img/paint_01.jpeg"></div>
+            <div class="my_body p-3"><img src="img/paint_11.jpg"></div>
+            <div class="my_body p-3"><img src="img/paint_03.jpeg"></div>
+            <div class="my_body p-3"><img src="img/paint_04.jpeg"></div>
+            <div class="my_body p-3"><img src="img/paint_10.jpg"></div>
+            <div class="my_body p-3"><img src="img/paint_06.jpeg"></div>
+          </div>
+          <div class="row mt-5"><div class="col-xl-6"><img src="img/beautiful mind.jpg" class="w-100"></div>
+        <div class="col-xl-6">
+            <img src="img/paint_08.jpg" class="w-100">
+            <img src="img/paint_05.jpeg" class="w-100 mt-3">
+        </div></div>
+    </div>
+    <div class="my_body p-5 mt-5 rounded-lg">
+        <h3 class="text-center">Webpages</h3>
+        <p class="font-italic text-center">Design and code by me</p>
+        <div class="faded">
+            <div class="position-relative"><img src="img/noisy-corner.jpg"><div class="overlay_web"><div>
+              Simplicity style portfolio.
+              <a href="noisy/CODE/index.html" target="_blank">Visit here</a><br>
+              Works on screen width 1440px.
+            </div></div></div>
+            <div class="position-relative"><img src="img/cozycorner.jpg"><div class="overlay_web">Home decoration website. 
+                <a href="code/index.html" target="_blank">Visit here</a></div></div>
+            <div class="position-relative"><img src="img/fast_delightful.jpg"><div class="overlay_web"><div>
+              Fastfood website.
+                  <a href="ngan/aboutus.html" target="_blank">Visit here</a><br>
+                Please access only Bánh burgers/Câu hỏi thường gặp/User icon
+            </div></div></div>
+          </div>
+    </div>
+</div>
+<button id="backtotop"><i class="fas fa-chevron-up"></i></button>
+
+
+
+
+      <script type="text/javascript" src="js/jquery.min.js"></script>
+    <script type="text/javascript" src="js/popper.js"></script>
+    <script type="text/javascript" src="js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="slick/slick.min.js"></script>
+    <!-- <script type="text/javascript" src="https://code.jquery.com/jquery-3.4.0.js"></script>
+		<script type="text/javascript" src="js/jquery.gallery.js"></script> -->
+    <script>
+        AOS.init();
+    </script>
+    <script>
+        $('.clickhere').click(function(){
+            $('.toggle').toggleClass('overlay');
+        });
+        $('.span1').click(function(){
+            $('.toggle').toggleClass('hide');
+        });
+    </script>
+    <script>
+        
+$('.center').slick({
+  centerMode: true,
+  slidesToShow: 3,
+  responsive: [
+    
+    {
+      breakpoint: 481,
+      settings: {
+        arrows: false,
+        centerMode: true,
+        centerPadding: '40px',
+        slidesToShow: 1
+      }
+    }
+  ]
+});
+    </script>
+    <script type="text/javascript">
+       $('.faded').slick({
+  dots: true,
+  infinite: true,
+  speed: 500,
+  fade: true,
+  cssEase: 'linear',
+  responsive: [
+    
+    {
+      breakpoint: 481,
+      settings: {
+        arrows: false
+      }
+    }
+  ]
+});
+		
+    </script>
+    <script type="text/javascript">
+      $(document).ready(function(){
+        $(window).scroll(function(){
+            if ($(this).scrollTop() > 40) {
+                $('#backtotop').fadeIn();
+            }else{
+                $('#backtotop').fadeOut();
+            }
+        });
+        $('#backtotop').click(function(){
+            $('html,body').animate({scrollTop : 0},800);
+        })
+      })
+  </script>
+</body>
+      </body>
+      </html>

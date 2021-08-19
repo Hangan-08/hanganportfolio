@@ -1,0 +1,1563 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Câu hỏi thường gặp</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.css" />
+    <link rel="stylesheet" type="text/css" href="slick/slick.css" />
+    <link rel="stylesheet" type="text/css" href="slick/slick-theme.css" />
+    <!-- <script type="text/javascript" src="js/jquery.min.js"></script> -->
+
+    <link rel="stylesheet" type="text/css" href="css/all.css" />
+    <link rel="stylesheet" type="text/css" href="fontawesome/css/all.min.css" />
+    <!-- <script type="text/javascript" src="js/all.js"></script> -->
+    <link rel="stylesheet" type="text/css" href="css/faqs.css" />
+  </head>
+  <body>
+    <!-- Menu lăn xuống hiện ra -->
+    <div class="d-none d-sm-block">
+      <nav class="navbar navbar-expand-lg bg-dark scrollingnav">
+        <a class="navbar-brand d-none d-lg-block ml-3" href="#"
+          ><img src="img/logo-nav-02.svg" class="logo_nav_2 p-1" width="80%"
+        /></a>
+        <div class="collapse navbar-collapse menu" id="mynavbar">
+          <ul class="navbar-nav mr-auto t">
+            <li class="nav-item active">
+              <a class="nav-link text-light" href="../thang/home.html"
+                >Trang chủ
+              </a>
+            </li>
+            <li class="nav-item dropdown">
+              <a
+                class="nav-link dropdown-toggle text-light"
+                href="../thu/menu.html"
+                id="navbarDropdown"
+                role="button"
+                data-toggle="dropdown"
+                aria-haspopup="true"
+                aria-expanded="false"
+              >
+                Thực đơn
+              </a>
+              <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <a class="dropdown-item" href="../thang/garan.html">Gà rán</a>
+                <a class="dropdown-item" href="burgers.html">Bánh burgers</a>
+                <a class="dropdown-item" href="../thu/com.html">Cơm</a>
+                <a class="dropdown-item" href="../huy/combo.html">Combo</a>
+                <a class="dropdown-item" href="../thu/do_uong.html"
+                  >Nước uống/Tráng miệng</a
+                >
+              </div>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link text-light" href="../huy/khuyenmai.html"
+                >Khuyến mãi</a
+              >
+            </li>
+            <li class="nav-item">
+              <a class="nav-link text-light" href="aboutus.html"
+                >Về chúng tôi</a
+              >
+            </li>
+            <li class="nav-item">
+              <a class="nav-link text-light" href="../huy/lienhe.html"
+                >Liên hệ</a
+              >
+            </li>
+            <li class="nav-item dropdown">
+              <a
+                class="nav-link dropdown-toggle text-light"
+                href="../thu/ho_tro.html"
+                id="navbarDropdown"
+                role="button"
+                data-toggle="dropdown"
+                aria-haspopup="true"
+                aria-expanded="false"
+              >
+                Hỗ trợ
+              </a>
+              <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <a class="dropdown-item" href="faqs.html">Câu hỏi thường gặp</a>
+              </div>
+            </li>
+          </ul>
+        </div>
+        <!-- Giỏ hàng đăng nhập desktop -->
+        <div class="ml-auto icon d-none d-lg-block">
+          <button
+            class="myicon bg-transparent border-0"
+            data-toggle="modal"
+            data-target="#cart"
+          >
+            <i class="fas fa-shopping-basket text-light h2"></i>
+          </button>
+          <!-- Cart modal -->
+          <div
+            class="gio_hang modal fade"
+            id="cart"
+            tabindex="1"
+            aria-labelledby="mymodal"
+            aria-hidden="true"
+          >
+            <div class="modal-dialog modal-lg">
+              <div class="modal-content">
+                <div class="modal-header red_bg">
+                  <div class="col-1"></div>
+                  <h5
+                    class="modal-title col-10 text-center text-light"
+                    id="mymodal"
+                  >
+                    Giỏ hàng
+                  </h5>
+                  <button
+                    type="button"
+                    class="close col-1"
+                    data-dismiss="modal"
+                    aria-label="close"
+                  >
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+                </div>
+                <div class="modal-body p-0 yl_bg">
+                  <table class="table_cart" id="tablecart">
+                    <thead class="w-100">
+                      <th class="p-3">Đơn hàng của bạn</th>
+                      <th></th>
+                      <th></th>
+
+                      <th colspan="2" class="p-3 text-right">
+                        <button
+                          id="deleteall"
+                          class="border-0 bg-transparent text-white"
+                        >
+                          Xóa hết
+                        </button>
+                      </th>
+                    </thead>
+                    <tbody class="w-100">
+                      <tr id="dishcart_01">
+                        <td class="w-25 p-3">
+                          <img src="img/dishes/dish_01.png" width="100%" />
+                        </td>
+                        <td class="p-3 w-25">Bánh burger bò</td>
+                        <td class="p-3 w-25">
+                          <div class="quantity h4">
+                            <button class="Subtract">-</button>
+                            <input
+                              class="quantity_input"
+                              type="number"
+                              min="0"
+                              value="0"
+                            />
+                            <button class="Add">+</button>
+                          </div>
+                        </td>
+                        <td class="p-3">49.000đ</td>
+                        <td>
+                          <button
+                            class="border-0 bg-transparent p-2"
+                            id="delete_01"
+                          >
+                            <i class="fas fa-trash-alt"></i>
+                          </button>
+                        </td>
+                      </tr>
+                      <tr id="dishcart_02">
+                        <td class="w-25 p-3">
+                          <img src="img/dishes/dish_02.png" width="100%" />
+                        </td>
+                        <td class="p-3 w-25">Bánh burger cá</td>
+                        <td class="p-3 w-25">
+                          <div class="quantity h4">
+                            <button class="Subtract">-</button>
+                            <input
+                              class="quantity_input"
+                              type="number"
+                              min="0"
+                              value="0"
+                            />
+                            <button class="Add">+</button>
+                          </div>
+                        </td>
+                        <td class="p-3">59.000đ</td>
+                        <td>
+                          <button
+                            class="border-0 bg-transparent p-2"
+                            id="delete_02"
+                          >
+                            <i class="fas fa-trash-alt"></i>
+                          </button>
+                        </td>
+                      </tr>
+                      <tr>
+                        <th
+                          class="p-0 px-5 pb-5 text-light text-left"
+                          colspan="3"
+                        >
+                          Tổng cộng
+                        </th>
+
+                        <th
+                          class="
+                            p-0
+                            pr-5
+                            pl-3
+                            pb-5
+                            total_cart
+                            text-light text-left
+                          "
+                          colspan="2"
+                        >
+                          108.000đ
+                        </th>
+                      </tr>
+                    </tbody>
+                    <tr class="red_bg">
+                      <td colspan="5" class="text-right pt-4 pr-4 pb-3">
+                        <a href="gio_hang.html"
+                          ><div class="rounded-lg p-3 text-center button00">
+                            Tiến hành thanh toán
+                          </div></a
+                        >
+                      </td>
+                    </tr>
+                  </table>
+                  <p id="nothing" class="text-center py-3">
+                    Giỏ hàng của bạn chưa có gì
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <a href="accmanage.html" class="myicon">
+            <i class="fas fa-user text-light h2 ml-3"></i
+          ></a>
+        </div>
+      </nav>
+    </div>
+    <div class="side_click">
+      <div class="toggle_class shadow-lg border-right-0 rounded-left d-flex">
+        <i class="fas fa-chevron-left h5 m-auto text-light"></i>
+      </div>
+      <div class="grr">
+        <div
+          class="
+            side
+            shadow-lg
+            border-right-0
+            p-2
+            rounded-left
+            round-lg
+            d-inline-block
+          "
+        >
+          <button id="backtotop" class="d-block side_button">
+            <i class="fas fa-arrow-up h4 text-light"></i>
+          </button>
+          <a href="#" class="d-block mt-1 ml-2"
+            ><i class="fab fa-facebook-f h4 text-light"></i
+          ></a>
+          <a href="#" class="d-block mt-1 ml-2"
+            ><i class="fab fa-instagram h4 text-light"></i
+          ></a>
+        </div>
+      </div>
+    </div>
+    <!--nav 1440-->
+    <div class="bg_nav_big d-none d-xl-block">
+      <nav class="navbar navbar-expand-lg py-0 nav_1">
+        <div class="container container_pad py-3">
+          <p class="pl-3">Hotline đặt hàng: 01236908375</p>
+          <p class="pr-3">
+            Giao hàng đến &nbsp; <span class="fontspan">HCM</span>&nbsp;&nbsp;<a
+              href="accmanage.html"
+              class="nav_item"
+              >Thay đổi</a
+            >
+          </p>
+        </div>
+      </nav>
+      <nav class="navbar navbar-expand-lg nav_1">
+        <div class="container nav_fix1 container_pad">
+          <div class="border_nav mr-auto p-3">
+            <a href="../thang/home.html" class="nav_item1 fontspan"
+              >Trang chủ</a
+            >
+            <a href="../thu/menu.html" class="nav_item1 fontspan">Thực đơn</a>
+            <a href="../huy/khuyenmai.html" class="nav_item1 fontspan"
+              >Khuyến mãi</a
+            >
+          </div>
+          <a href="../thang/home.html" class="navbar-brand m-auto"
+            ><img src="img/logo.png" class="logo_png"
+          /></a>
+          <div class="border_nav ml-auto p-3">
+            <a href="aboutus.html" class="nav_item2 fontspan">Về chúng tôi</a>
+            <a href="../huy/lienhe.html" class="nav_item2 fontspan">Liên hệ</a>
+            <a href="../thu/ho_tro.html" class="nav_item2 fontspan">Hỗ trợ</a>
+          </div>
+        </div>
+      </nav>
+    </div>
+    <!--end nav 1440-->
+    <!--Nav 320-->
+    <div class="bg_nav d-sm-none d-block w-100">
+      <nav class="navbar navbar-expand-sm">
+        <button
+          class="navbar-toggler mr-auto"
+          type="button"
+          data-toggle="collapse"
+          data-target="#top_nav2"
+          style="color: white"
+        >
+          <i class="fas fa-bars"></i>
+        </button>
+        <a href="../thang/home.html" class="navbar-brand logo_320 m-auto"
+          ><img src="img/logo.png"
+        /></a>
+        <div class="ml-auto form-inline">
+          <a
+            data-toggle="modal"
+            data-target="#gio_modal"
+            class="nav-link text-light icon"
+            ><i class="fas fa-shopping-basket"></i
+          ></a>
+          <a href="accmanage.html" class="nav-link icon"
+            ><i class="fas fa-user"></i
+          ></a>
+        </div>
+
+        <div id="top_nav2" class="collapse navbar-collapse">
+          <ul class="navbar-nav drop">
+            <li class="nav-item ml-3">
+              <a href="../thang/home.html" class="nav_item fontspan"
+                >Trang chủ</a
+              >
+            </li>
+            <li class="nav-item ml-3 dropdown">
+              <a
+                class="fontspan nav-link dropdown-toggle text-light"
+                href="../thu/menu.html"
+                id="navbarDropdown"
+                role="button"
+                data-toggle="dropdown"
+                aria-haspopup="true"
+                aria-expanded="false"
+              >
+                Thực đơn
+              </a>
+              <div
+                class="dropdown-menu drop_menu_320 px-0 pb-2"
+                aria-labelledby="navbarDropdown"
+              >
+                <a class="pl-2 dropdown-item" href="../thang/garan.html"
+                  >Gà rán</a
+                >
+                <a class="pl-2 dropdown-item" href="burgers.html"
+                  >Bánh burgers</a
+                >
+                <a class="pl-2 dropdown-item" href="../thu/com.html">Cơm</a>
+                <a class="pl-2 dropdown-item" href="../huy/combo.html">Combo</a>
+                <a class="pl-2 dropdown-item" href="../thu/do_uong.html"
+                  >Nước uống/Tráng miệng</a
+                >
+              </div>
+            </li>
+
+            <li class="nav-item ml-3">
+              <a href="../huy/khuyenmai.html" class="nav_item fontspan"
+                >Khuyến mãi</a
+              >
+            </li>
+            <li class="nav-item ml-3">
+              <a href="aboutus.html" class="nav_item fontspan">Về chúng tôi</a>
+            </li>
+            <li class="nav-item ml-3">
+              <a href="../huy/lienhe.html" class="nav_item fontspan">Liên hệ</a>
+            </li>
+            <li class="nav-item ml-3 dropdown">
+              <a
+                class="fontspan nav-link dropdown-toggle text-light"
+                href="../thu/ho_tro.html"
+                id="navbarDropdown"
+                role="button"
+                data-toggle="dropdown"
+                aria-haspopup="true"
+                aria-expanded="false"
+              >
+                Hỗ trợ
+              </a>
+              <div
+                class="dropdown-menu drop_menu_320 px-0 pb-2"
+                aria-labelledby="navbarDropdown"
+              >
+                <a class="pl-2 dropdown-item" href="faqs.html"
+                  >Câu hỏi thường gặp</a
+                >
+              </div>
+            </li>
+          </ul>
+        </div>
+      </nav>
+    </div>
+    <!-- Giỏ hàng đăng nhập mobile -->
+    <div class="modal fade" id="gio_modal">
+      <div class="modal-dialog modal-sm">
+        <div class="modal-content">
+          <!--Header-->
+          <div class="modal-header red_bg py-3">
+            <div class="col-1"></div>
+            <h4 class="fontspan text-light col-10 m-auto text-center">
+              Giỏ hàng
+            </h4>
+            <button
+              class="close col-1 text-light"
+              type="button"
+              data-dismiss="modal"
+            >
+              &times;
+            </button>
+          </div>
+
+          <!--Body-->
+          <div class="modal-body yl_bg">
+            <table class="table_cart" id="tablecart">
+              <tbody class="w-100">
+                <tr id="dishcart_03" class="">
+                  <td class="col-4 p-1">
+                    <img src="img/dishes/dish_01.png" width="100%" />
+                  </td>
+                  <td class="col-5 p-1">Bánh burger bò</td>
+                  <td class="col-3 p-1">
+                    <div class="quantity h6 m-0">
+                      <button class="Subtract">-</button>
+                      <input
+                        class="quantity_input"
+                        type="number"
+                        min="1"
+                        value="1"
+                      />
+                      <button class="Add">+</button>
+                    </div>
+                  </td>
+                </tr>
+                <tr id="dishcart_031">
+                  <td class="p-3 text-light" colspan="2">49.000đ</td>
+                  <td class="text-right pr-3">
+                    <button
+                      class="ml-auto border-0 bg-transparent p-2"
+                      id="delete_03"
+                    >
+                      <i class="fas fa-trash-alt"></i>
+                    </button>
+                  </td>
+                </tr>
+                <tr id="dishcart_04">
+                  <td class="col-4 p-1">
+                    <img src="img/dishes/dish_02.png" width="100%" />
+                  </td>
+                  <td class="col-5 p-1">Bánh burger cá</td>
+                  <td class="col-3 p-1">
+                    <div class="quantity h6 m-0">
+                      <button class="Subtract">-</button>
+                      <input
+                        class="quantity_input"
+                        type="number"
+                        min="1"
+                        value="1"
+                      />
+                      <button class="Add">+</button>
+                    </div>
+                  </td>
+                </tr>
+                <tr id="dishcart_041">
+                  <td class="p-3 text-light" colspan="2">59.000đ</td>
+                  <td class="text-right pr-3">
+                    <button class="border-0 bg-transparent p-2" id="delete_04">
+                      <i class="fas fa-trash-alt"></i>
+                    </button>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <!--Footer-->
+          <div class="modal-footer red_bg py-3">
+            <a href="gio_hang.html" class="btn_1 w-75 m-auto text-center"
+              >Tiến hành đặt hàng</a
+            >
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- body -->
+
+    <div class="container">
+      <nav aria-label="breadcrumb" class="bg_breadcrumb pt-5">
+        <ol class="breadcrumb bg-transparent pl-0 ml-0 pt-5">
+          <li class="breadcrumb-item">
+            <a href="#" class="text-secondary">Trang chủ</a>
+          </li>
+          <li class="breadcrumb-item">
+            <a href="#" class="text-secondary">Hỗ trợ</a>
+          </li>
+          <li class="breadcrumb-item active text-dark" aria-current="page">
+            Câu hỏi thường gặp
+          </li>
+        </ol>
+      </nav>
+    </div>
+    <div class="container-fluid">
+      <div class="my_wallpaper ">
+        <div class="wpp_content overflow-hidden">
+            <img src="img/faqs_wall.jpg">
+            <h2 class="myfont">Chúng tôi có thể giúp gì được cho bạn ?</h2>
+        </div>
+      </div>
+    </div>
+    <div class="container">
+      <nav class="mt-5">
+        <div
+          class="nav nav-tabs d-flex justify-content-between"
+          id="faqs_tab"
+          role="tablist"
+        >
+          <a
+            class="nav-link active p-3 w-25 d-flex justify-content-center"
+            id="booking"
+            data-toggle="tab"
+            href="#nav-home"
+            role="tab"
+            aria-controls="nav-home"
+            aria-selected="true"
+            ><div class="d-flex flex-column">
+              <img src="img/delivery.svg" />
+              <p class="orange_color myfont text-center">
+                Đặt hàng và thanh toán
+              </p>
+            </div></a
+          >
+
+          <a
+            class="nav-link p-3 w-25 d-flex justify-content-center"
+            id="account_01"
+            data-toggle="tab"
+            href="#nav-profile"
+            role="tab"
+            aria-controls="nav-profile"
+            aria-selected="false"
+            ><div class="d-flex flex-column align-items-center">
+              <i class="fas fa-user red_color"></i>
+              <p class="orange_color myfont d-none d-xl-block">
+                Tài khoản của tôi
+              </p>
+              <p class="orange_color myfont d-xl-none text-center">
+                Tài khoản<br />
+                của tôi
+              </p>
+            </div></a
+          >
+
+          <a
+            class="nav-link p-3 w-25 d-flex justify-content-center"
+            id="gift_01"
+            data-toggle="tab"
+            href="#nav-contact"
+            role="tab"
+            aria-controls="nav-contact"
+            aria-selected="false"
+            ><div class="d-flex flex-column align-items-center">
+              <div class="img_boxx mx-auto">
+                <img src="img/gift_box-01-01.png" height="100%" />
+              </div>
+              <p class="orange_color myfont">Ưu đãi</p>
+            </div></a
+          >
+
+          <a
+            class="nav-link p-3 w-25 d-flex justify-content-center"
+            id="aboutus_01"
+            data-toggle="tab"
+            href="#abtus"
+            role="tab"
+            aria-controls="nav-contact"
+            aria-selected="false"
+            ><div class="d-flex flex-column align-items-center">
+              <div class="img_boxx">
+                <img src="img/logo-02.png" height="100%" />
+              </div>
+              <p class="orange_color myfont d-none d-xl-block">
+                Về Fast&Delightful
+              </p>
+              <p class="orange_color myfont d-xl-none">Về chúng tôi</p>
+            </div></a
+          >
+        </div>
+      </nav>
+      <div class="tab-content" id="nav-tabContent">
+        <div
+          class="tab-pane fade show active"
+          id="nav-home"
+          role="tabpanel"
+          aria-labelledby="nav-home-tab"
+        >
+          <div id="accordion" class="mt-3">
+            <div
+              class="card border-bottom border-top border-left-0 border-right-0"
+            >
+              <div class="card-header bg-transparent" id="headingOne">
+                <h5 class="mb-0">
+                  <button
+                    class="btn w-100 click_acc red_color"
+                    data-toggle="collapse"
+                    data-target="#collapse_faqs_01"
+                    aria-expanded="true"
+                    aria-controls="collapseOne"
+                  >
+                    <div class="d-flex justify-content-between">
+                      <p>Khu vực Fast&Delightful tiếp nhận đơn hàng</p>
+                      <div class="fas-caret-left">
+                        <i class="fas fa-caret-left"></i>
+                      </div>
+                    </div>
+                  </button>
+                </h5>
+              </div>
+
+              <div
+                id="collapse_faqs_01"
+                class="collapse"
+                aria-labelledby="headingOne"
+              >
+                <div class="card-body">
+                  Những nơi mà Fast&Delightful có chi nhánh như Hồ Chí Minh, Hà
+                  Nội, Đà Nẵng,...
+                </div>
+              </div>
+            </div>
+            <div
+              class="card border-bottom border-top border-left-0 border-right-0"
+            >
+              <div class="card-header bg-transparent" id="headingTwo">
+                <h5 class="mb-0">
+                  <button
+                    class="btn w-100 click_acc red_color"
+                    data-toggle="collapse"
+                    data-target="#collapse_faqs_02"
+                    aria-expanded="true"
+                    aria-controls="collapseOne"
+                  >
+                    <div class="d-flex justify-content-between">
+                      <p>Làm thế nào để tôi đặt hàng qua website ?</p>
+                      <div class="fas-caret-left">
+                        <i class="fas fa-caret-left"></i>
+                      </div>
+                    </div>
+                  </button>
+                </h5>
+              </div>
+              <div
+                id="collapse_faqs_02"
+                class="collapse"
+                aria-labelledby="headingTwo"
+              >
+                <div class="card-body">
+                  Chọn thêm vào giỏ hàng, đăng nhập và nhập thông tin, mã giảm
+                  giá (nếu có) và tiến hành thanh toán.
+                </div>
+              </div>
+            </div>
+            <div
+              class="card border-bottom border-top border-left-0 border-right-0"
+            >
+              <div class="card-header bg-transparent" id="headingThree">
+                <h5 class="mb-0">
+                  <button
+                    class="btn w-100 click_acc red_color"
+                    data-toggle="collapse"
+                    data-target="#collapse_faqs_03"
+                    aria-expanded="true"
+                    aria-controls="collapseOne"
+                  >
+                    <div class="d-flex justify-content-between">
+                      <p>
+                        Fast&Delightful có tiếp nhận đơn hàng của tôi không ?
+                      </p>
+                      <div class="fas-caret-left">
+                        <i class="fas fa-caret-left"></i>
+                      </div>
+                    </div>
+                  </button>
+                </h5>
+              </div>
+              <div
+                id="collapse_faqs_03"
+                class="collapse"
+                aria-labelledby="headingThree"
+              >
+                <div class="card-body">
+                  Chúng tôi sẽ gọi điện xác nhận nếu bạn là khách hàng mới và
+                  gửi thư xác nhận qua hòm thư điện tử nếu bạn đã từng đặt hàng
+                  tại chỗ chúng tôi.
+                </div>
+              </div>
+            </div>
+            <div
+              class="card border-bottom border-top border-left-0 border-right-0"
+            >
+              <div class="card-header bg-transparent" id="headingThree">
+                <h5 class="mb-0">
+                  <button
+                    class="btn w-100 click_acc red_color"
+                    data-toggle="collapse"
+                    data-target="#collapse_faqs_04"
+                    aria-expanded="true"
+                    aria-controls="collapseOne"
+                  >
+                    <div class="d-flex justify-content-between">
+                      <p>Có những phương thức thanh toán nào ?</p>
+                      <div class="fas-caret-left">
+                        <i class="fas fa-caret-left"></i>
+                      </div>
+                    </div>
+                  </button>
+                </h5>
+              </div>
+              <div
+                id="collapse_faqs_04"
+                class="collapse"
+                aria-labelledby="headingThree"
+              >
+                <div class="card-body">
+                  Thanh toán trực tiếp hoặc thông qua thẻ tín dụng, tài khoản
+                  ngân hàng, hoặc cái loại ví điện tử,
+                </div>
+              </div>
+            </div>
+            <div
+              class="card border-bottom border-top border-left-0 border-right-0"
+            >
+              <div class="card-header bg-transparent" id="headingThree">
+                <h5 class="mb-0">
+                  <button
+                    class="btn w-100 click_acc red_color"
+                    data-toggle="collapse"
+                    data-target="#collapse_faqs_05"
+                    aria-expanded="true"
+                    aria-controls="collapseOne"
+                  >
+                    <div class="d-flex justify-content-between">
+                      <p>
+                        Fast&Delightful có hoạt động trong thời gian Covid-19
+                        không ?
+                      </p>
+                      <div class="fas-caret-left">
+                        <i class="fas fa-caret-left"></i>
+                      </div>
+                    </div>
+                  </button>
+                </h5>
+              </div>
+              <div
+                id="collapse_faqs_05"
+                class="collapse"
+                aria-labelledby="headingThree"
+              >
+                <div class="card-body">
+                  Dựa trên Chỉ thị 16 của chính phủ, hiện chúng tôi vẫn đang tạm
+                  ngưng hoạt động trên một số khu vực.
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div
+          class="tab-pane fade"
+          id="nav-profile"
+          role="tabpanel"
+          aria-labelledby="nav-profile-tab"
+        >
+          <div id="accordion" class="mt-3">
+            <div
+              class="card border-bottom border-top border-left-0 border-right-0"
+            >
+              <div class="card-header bg-transparent" id="headingOne">
+                <h5 class="mb-0">
+                  <button
+                    class="btn w-100 click_acc red_color"
+                    data-toggle="collapse"
+                    data-target="#collapse_faqs_06"
+                    aria-expanded="true"
+                    aria-controls="collapseOne"
+                  >
+                    <div class="d-flex justify-content-between">
+                      <p>Tại sao tôi không thể đăng nhập vào website được?</p>
+                      <div class="fas-caret-left">
+                        <i class="fas fa-caret-left"></i>
+                      </div>
+                    </div>
+                  </button>
+                </h5>
+              </div>
+
+              <div
+                id="collapse_faqs_06"
+                class="collapse"
+                aria-labelledby="headingOne"
+              >
+                <div class="card-body">
+                  Fast&Delightful khuyến khích quý khách sử dụng trình duyệt
+                  Google Chrome để truy cập website một cách hiệu quả nhất. Nếu
+                  quý khách đã sử dụng trình duyệt này nhưng vẫn chưa thể đăng
+                  nhập, F&D nhận thấy lỗi xảy ra thường do tính năng chặn quảng
+                  cáo được cài đặt trên trình duyệt của quý khách. Một dấu hiệu
+                  nhận biết thường gặp là tại góc phải của trình duyệt sẽ xuất
+                  hiện icon màu đỏ hình bàn tay, quý khách vui lòng tạm gỡ bỏ
+                  (hoặc tắt) tính năng.
+                </div>
+              </div>
+            </div>
+            <div
+              class="card border-bottom border-top border-left-0 border-right-0"
+            >
+              <div class="card-header bg-transparent" id="headingTwo">
+                <h5 class="mb-0">
+                  <button
+                    class="btn w-100 click_acc red_color"
+                    data-toggle="collapse"
+                    data-target="#collapse_faqs_07"
+                    aria-expanded="true"
+                    aria-controls="collapseOne"
+                  >
+                    <div class="d-flex justify-content-between">
+                      <p>
+                        Làm thế nào để đăng nhận xét sản phẩm trên
+                        Fast&Delightful ?
+                      </p>
+                      <div class="fas-caret-left">
+                        <i class="fas fa-caret-left"></i>
+                      </div>
+                    </div>
+                  </button>
+                </h5>
+              </div>
+              <div
+                id="collapse_faqs_07"
+                class="collapse"
+                aria-labelledby="headingTwo"
+              >
+                <div class="card-body">
+                  Truy cập mục “Quản lý đơn hàng” trong tài khoản tại
+                  Website/Fast&Delightful App, tiến hành lựa chọn sản phẩm cần
+                  nhận xét và bấm vào nút viết nhận xét bên dưới.
+                </div>
+              </div>
+            </div>
+            <div
+              class="card border-bottom border-top border-left-0 border-right-0"
+            >
+              <div class="card-header bg-transparent" id="headingThree">
+                <h5 class="mb-0">
+                  <button
+                    class="btn w-100 click_acc red_color"
+                    data-toggle="collapse"
+                    data-target="#collapse_faqs_08"
+                    aria-expanded="true"
+                    aria-controls="collapseOne"
+                  >
+                    <div class="d-flex justify-content-between">
+                      <p>Làm cách nào để tôi hủy đơn hàng sau khi đã đặt ?</p>
+                      <div class="fas-caret-left">
+                        <i class="fas fa-caret-left"></i>
+                      </div>
+                    </div>
+                  </button>
+                </h5>
+              </div>
+              <div
+                id="collapse_faqs_08"
+                class="collapse"
+                aria-labelledby="headingThree"
+              >
+                <div class="card-body">
+                  Quý khách có thể thực hiện hủy đơn hàng đã đặt ở website nếu
+                  đơn hàng đang trong quá trình xử lý. Các bước để hủy đơn hàng:
+                  1. Đăng nhập tài khoản Quý khách vui lòng đăng nhập vào tài
+                  khoản đã đặt đơn hàng. 2. Vào mục quản lý đơn hàng và chọn đơn
+                  hàng cần hủy. 3. Chọn tính năng “Hủy đơn hàng” ở cuối trang
+                  thông tin đơn hàng. 4. Chọn lý do và thực hiện thao tác hủy.
+                </div>
+              </div>
+            </div>
+            <div
+              class="card border-bottom border-top border-left-0 border-right-0"
+            >
+              <div class="card-header bg-transparent" id="headingThree">
+                <h5 class="mb-0">
+                  <button
+                    class="btn w-100 click_acc red_color"
+                    data-toggle="collapse"
+                    data-target="#collapse_faqs_09"
+                    aria-expanded="true"
+                    aria-controls="collapseOne"
+                  >
+                    <div class="d-flex justify-content-between">
+                      <p>
+                        Làm cách nào để tôi đăng ký tài khoản trên website F&D?
+                      </p>
+                      <div class="fas-caret-left">
+                        <i class="fas fa-caret-left"></i>
+                      </div>
+                    </div>
+                  </button>
+                </h5>
+              </div>
+              <div
+                id="collapse_faqs_09"
+                class="collapse"
+                aria-labelledby="headingThree"
+              >
+                <div class="card-body">
+                  Để đăng ký tài khoản tại F&D, quý khách vui lòng thao tác như
+                  sau: Bước 1: Chọn mục "Tạo tài khoản" Bước 2: Điền thông tin
+                  cá nhân Quý khách lưu ý mã xác thực sẽ được gửi qua số điện
+                  thoại và có hiệu lực thời gian ngắn. Để tránh mã hết hiệu lực
+                  quý khách vui lòng nhập ngay khi nhận được mã.
+                </div>
+              </div>
+            </div>
+            <div
+              class="card border-bottom border-top border-left-0 border-right-0"
+            >
+              <div class="card-header bg-transparent" id="headingThree">
+                <h5 class="mb-0">
+                  <button
+                    class="btn w-100 click_acc red_color"
+                    data-toggle="collapse"
+                    data-target="#collapse_faqs_10"
+                    aria-expanded="true"
+                    aria-controls="collapseOne"
+                  >
+                    <div class="d-flex justify-content-between">
+                      <p>
+                        Tại sao bài nhận xét sản phẩm của tôi không được hiển
+                        thị tại trang F&D?
+                      </p>
+                      <div class="fas-caret-left">
+                        <i class="fas fa-caret-left"></i>
+                      </div>
+                    </div>
+                  </button>
+                </h5>
+              </div>
+              <div
+                id="collapse_faqs_10"
+                class="collapse"
+                aria-labelledby="headingThree"
+              >
+                <div class="card-body">
+                  F&D xin từ chối duyệt đăng những nhận xét có nội dung như sau:
+                  Thông tin viết giống nhau, lặp đi lặp lại, những dòng lệnh lập
+                  trình, nội dung spam, test,.... Nhận xét đề cập đến các thông
+                  tin cá nhân như số điện thoại, địa chỉ, email,... Nội dung
+                  nhận xét không liên quan đến sản phẩm, dịch vụ cần bình luận.
+                  Nhận xét có nội dung cố tình bôi xấu sản phẩm vì các lý do cá
+                  nhân, kinh doanh không lành mạnh, có nội dung mua bán, trao
+                  đổi,... Thông tin xâm hại đến quyền lợi hoặc đời tư, nhân
+                  phẩm, làm tổn thương, công kích người khác. Thông tin có liên
+                  quan đến các hành vi tội phạm, vi phạm đạo đức, thuần phong mỹ
+                  tục, chính trị - tôn giáo, từ ngữ không phù hợp. Những thông
+                  tin khác mà công ty F&D cho rằng không hợp lý khi đăng tải.
+                  Những quy định về phần quản lý nhận xét sẽ được F&D thay đổi
+                  khi cần thiết để phù hợp với tình hình thực tế; quy định mới
+                  sẽ có hiệu lực kể từ khi được đăng tải tại đây.
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div
+          class="tab-pane fade"
+          id="nav-contact"
+          role="tabpanel"
+          aria-labelledby="nav-contact-tab"
+        >
+          <div id="accordion" class="mt-3">
+            <div
+              class="card border-bottom border-top border-left-0 border-right-0"
+            >
+              <div class="card-header bg-transparent" id="headingOne">
+                <h5 class="mb-0">
+                  <button
+                    class="btn w-100 click_acc red_color"
+                    data-toggle="collapse"
+                    data-target="#collapse_faqs_11"
+                    aria-expanded="true"
+                    aria-controls="collapseOne"
+                  >
+                    <div class="d-flex justify-content-between">
+                      <p>Freeship+ của F&D là chương trình như thế nào?</p>
+                      <div class="fas-caret-left">
+                        <i class="fas fa-caret-left"></i>
+                      </div>
+                    </div>
+                  </button>
+                </h5>
+              </div>
+
+              <div
+                id="collapse_faqs_11"
+                class="collapse"
+                aria-labelledby="headingOne"
+              >
+                <div class="card-body">
+                  - Miễn phí vận chuyển tối đa 30.000 VND cho giỏ hàng của mỗi
+                  nhà bán đạt giá trị từ 149.000 VND đến 298.000 VND.
+
+                  <br />
+                  - Miễn phí vận chuyển tối đa 50.000 VND cho giỏ hàng của mỗi
+                  nhà bán đạt giá trị từ 299.000 VND.
+                </div>
+              </div>
+            </div>
+            <div
+              class="card border-bottom border-top border-left-0 border-right-0"
+            >
+              <div class="card-header bg-transparent" id="headingTwo">
+                <h5 class="mb-0">
+                  <button
+                    class="btn w-100 click_acc red_color"
+                    data-toggle="collapse"
+                    data-target="#collapse_faqs_12"
+                    aria-expanded="true"
+                    aria-controls="collapseOne"
+                  >
+                    <div class="d-flex justify-content-between">
+                      <p>Một số lưu ý của chương trình "Rẻ hơn hoàn tiền"</p>
+                      <div class="fas-caret-left">
+                        <i class="fas fa-caret-left"></i>
+                      </div>
+                    </div>
+                  </button>
+                </h5>
+              </div>
+              <div
+                id="collapse_faqs_12"
+                class="collapse"
+                aria-labelledby="headingTwo"
+              >
+                <div class="card-body">
+                  Mỗi khách hàng có thể gửi thông báo đến F&D tối đa 3 lần/ngày.
+                  Giá trị hoàn trả mỗi lần không quá 500,000 Fast&Delightful Xu/
+                  lần (nếu sản phẩm thỏa điều kiện của chương trình). Mỗi khách
+                  hàng được hoàn tiền tối đa 1 lần cho cùng 1 sản phẩm. Nhà bán
+                  hàng tại Fast&Delightful/ Nhân viên/ Người thân của nhà bán
+                  không được tham gia chương trình này. Fast&Delightful có quyền
+                  từ chối hoàn tiền nếu phát hiện khách hàng có dấu hiệu không
+                  trung thực và lợi dụng chính sách của Fast&Delightful. Trong
+                  mọi trường hợp, quyết định của Fast&Delightful là quyết định
+                  cuối cùng. Fast&Delightful có thể dừng chương trình bất cứ lúc
+                  nào mà không cần thông báo trước. Sản phẩm đã được hoàn xu
+                  Fast&Delightful rất tiếc sẽ chưa hỗ trợ trả hàng do nhu cầu.
+                </div>
+              </div>
+            </div>
+            <div
+              class="card border-bottom border-top border-left-0 border-right-0"
+            >
+              <div class="card-header bg-transparent" id="headingThree">
+                <h5 class="mb-0">
+                  <button
+                    class="btn w-100 click_acc red_color"
+                    data-toggle="collapse"
+                    data-target="#collapse_faqs_13"
+                    aria-expanded="true"
+                    aria-controls="collapseOne"
+                  >
+                    <div class="d-flex justify-content-between">
+                      <p>Thẻ Fast&DelightfulCARD có ưu đãi gì?</p>
+                      <div class="fas-caret-left">
+                        <i class="fas fa-caret-left"></i>
+                      </div>
+                    </div>
+                  </button>
+                </h5>
+              </div>
+              <div
+                id="collapse_faqs_13"
+                class="collapse"
+                aria-labelledby="headingThree"
+              >
+                <div class="card-body">
+                  * Hoàn tiền cho mọi giao dịch - Giao dịch thanh toán tại
+                  website/ ứng dụng Fast&Delightful & TicketBox: Hoàn tiền 15%
+                  trong vòng 180 ngày đầu tiên kể từ ngày kích hoạt thẻ, hoàn
+                  tiền 10% từ ngày thứ 181 trở đi đến khi thẻ được thanh lý. -
+                  Giao dịch tại đơn vị chấp nhận thẻ khác: + Với một số loại
+                  hình giao dịch (MCC) đặc biệt như siêu thị, giáo dục, bệnh
+                  viện… (theo tổ chức thẻ Visa quy định): Hoàn 0,5%, tối đa
+                  200.000 VND/ chủ thẻ/ kỳ thông báo giao dịch (TBGD).
+                </div>
+              </div>
+            </div>
+            <div
+              class="card border-bottom border-top border-left-0 border-right-0"
+            >
+              <div class="card-header bg-transparent" id="headingThree">
+                <h5 class="mb-0">
+                  <button
+                    class="btn w-100 click_acc red_color"
+                    data-toggle="collapse"
+                    data-target="#collapse_faqs_14"
+                    aria-expanded="true"
+                    aria-controls="collapseOne"
+                  >
+                    <div class="d-flex justify-content-between">
+                      <p>Điều kiện hoàn tiền Thẻ Fast&DelightfulCARD là gì?</p>
+                      <div class="fas-caret-left">
+                        <i class="fas fa-caret-left"></i>
+                      </div>
+                    </div>
+                  </button>
+                </h5>
+              </div>
+              <div
+                id="collapse_faqs_14"
+                class="collapse"
+                aria-labelledby="headingThree"
+              >
+                <div class="card-body">
+                  * Hoàn 50% phí thường niên năm đầu - Chỉ áp dụng cho chủ thẻ
+                  mới phát hành thẻ Fast&Delightful lần đầu tiên, chưa có thẻ
+                  tín dụng Sacombank trước đó hoặc đã hủy tất cả thẻ tín dụng
+                  Sacombank trước ngày đăng ký tối thiểu 6 tháng. Trường hợp KH
+                  hủy thẻ và sau đó mở lại sẽ không được áp dụng chính sách ưu
+                  đãi này. - Có phát sinh giao dịch chi tiêu từ 2 triệu đồng tại
+                  Fast&Delightful và Ticketbox (cho phép cộng dồn giao dịch)
+                  trong vòng 30 ngày kể từ ngày kích hoạt thẻ. - Chỉ áp dụng cho
+                  chủ thẻ Fast&Delightful có thu 100% phí thường niên.
+                </div>
+              </div>
+            </div>
+            <div
+              class="card border-bottom border-top border-left-0 border-right-0"
+            >
+              <div class="card-header bg-transparent" id="headingThree">
+                <h5 class="mb-0">
+                  <button
+                    class="btn w-100 click_acc red_color"
+                    data-toggle="collapse"
+                    data-target="#collapse_faqs_15"
+                    aria-expanded="true"
+                    aria-controls="collapseOne"
+                  >
+                    <div class="d-flex justify-content-between">
+                      <p>
+                        Thẻ tín dụng Sacombank Fast&Delightful Platinum
+                        (Fast&DelightfulCARD) là gì?
+                      </p>
+                      <div class="fas-caret-left">
+                        <i class="fas fa-caret-left"></i>
+                      </div>
+                    </div>
+                  </button>
+                </h5>
+              </div>
+              <div
+                id="collapse_faqs_15"
+                class="collapse"
+                aria-labelledby="headingThree"
+              >
+                <div class="card-body">
+                  Là thẻ tín dụng đồng thương hiệu Visa, hạng Bạch Kim
+                  (Platinum), hợp tác phát hành giữa Sacombank và
+                  Fast&Delightful với ưu đãi hoàn tiền cho các giao dịch trực
+                  tuyến cao nhất thị trường 15%, ưu đãi hoàn 50% phí thường niên
+                  và nhiều ưu đãi khác.
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div
+          class="tab-pane fade"
+          id="abtus"
+          role="tabpanel"
+          aria-labelledby="nav-contact-tab"
+        >
+          <div id="accordion" class="mt-3">
+            <div
+              class="card border-bottom border-top border-left-0 border-right-0"
+            >
+              <div class="card-header bg-transparent" id="headingOne">
+                <h5 class="mb-0">
+                  <button
+                    class="btn w-100 click_acc red_color"
+                    data-toggle="collapse"
+                    data-target="#collapse_faqs_16"
+                    aria-expanded="true"
+                    aria-controls="collapseOne"
+                  >
+                    <div class="d-flex justify-content-between">
+                      <p>Fast&Delightful là gì ?</p>
+                      <div class="fas-caret-left">
+                        <i class="fas fa-caret-left"></i>
+                      </div>
+                    </div>
+                  </button>
+                </h5>
+              </div>
+
+              <div
+                id="collapse_faqs_16"
+                class="collapse"
+                aria-labelledby="headingOne"
+              >
+                <div class="card-body">
+                  Chúng tôi là cửa hàng thức ăn nhanh an toàn cho sức khỏe hiện
+                  đang có mặt trên toàn quốc.
+                </div>
+              </div>
+            </div>
+            <div
+              class="card border-bottom border-top border-left-0 border-right-0"
+            >
+              <div class="card-header bg-transparent" id="headingTwo">
+                <h5 class="mb-0">
+                  <button
+                    class="btn w-100 click_acc red_color"
+                    data-toggle="collapse"
+                    data-target="#collapse_faqs_17 "
+                    aria-expanded="true"
+                    aria-controls="collapseOne"
+                  >
+                    <div class="d-flex justify-content-between">
+                      <p>Nguyên liệu của Fats&Delightful là từ đâu ?</p>
+                      <div class="fas-caret-left">
+                        <i class="fas fa-caret-left"></i>
+                      </div>
+                    </div>
+                  </button>
+                </h5>
+              </div>
+              <div
+                id="collapse_faqs_17"
+                class="collapse"
+                aria-labelledby="headingTwo"
+              >
+                <div class="card-body">
+                  Chúng tôi nhập nguyên liệu trực tiếp từ các nông trại gần khu
+                  vực của chi nhánh để đảm bảo độ tươi nguyên. Tuy nhiên có một
+                  số sản phẩm đặc trưng chúng tôi cũng nhập khẩu từ nước ngoài.
+                </div>
+              </div>
+            </div>
+            <div
+              class="card border-bottom border-top border-left-0 border-right-0"
+            >
+              <div class="card-header bg-transparent" id="headingThree">
+                <h5 class="mb-0">
+                  <button
+                    class="btn w-100 click_acc red_color"
+                    data-toggle="collapse"
+                    data-target="#collapse_faqs_18"
+                    aria-expanded="true"
+                    aria-controls="collapseOne"
+                  >
+                    <div class="d-flex justify-content-between">
+                      <p>
+                        Fast&Delightful có ưu đãi cho khách hàng thân thiết
+                        không ?
+                      </p>
+                      <div class="fas-caret-left">
+                        <i class="fas fa-caret-left"></i>
+                      </div>
+                    </div>
+                  </button>
+                </h5>
+              </div>
+              <div
+                id="collapse_faqs_18"
+                class="collapse"
+                aria-labelledby="headingThree"
+              >
+                <div class="card-body">
+                  Chúng tôi trân trọng tất cả khách hàng đã đem lại cho chúng
+                  tôi cơ hội phục vụ không chỉ một lần, vì thế chúng tôi luôn
+                  dành tặng khách hàng những món quà vào các dịp đặc biệt.
+                </div>
+              </div>
+            </div>
+            <div
+              class="card border-bottom border-top border-left-0 border-right-0"
+            >
+              <div class="card-header bg-transparent" id="headingThree">
+                <h5 class="mb-0">
+                  <button
+                    class="btn w-100 click_acc red_color"
+                    data-toggle="collapse"
+                    data-target="#collapse_faqs_19"
+                    aria-expanded="true"
+                    aria-controls="collapseOne"
+                  >
+                    <div class="d-flex justify-content-between">
+                      <p>Fast&Delight thành lập khi nào ?</p>
+                      <div class="fas-caret-left">
+                        <i class="fas fa-caret-left"></i>
+                      </div>
+                    </div>
+                  </button>
+                </h5>
+              </div>
+              <div
+                id="collapse_faqs_19"
+                class="collapse"
+                aria-labelledby="headingThree"
+              >
+                <div class="card-body">
+                  Chúng tôi thành lập từ năm 1994 tới nay.
+                </div>
+              </div>
+            </div>
+            <div
+              class="card border-bottom border-top border-left-0 border-right-0"
+            >
+              <div class="card-header bg-transparent" id="headingThree">
+                <h5 class="mb-0">
+                  <button
+                    class="btn w-100 click_acc red_color"
+                    data-toggle="collapse"
+                    data-target="#collapse_faqs_20"
+                    aria-expanded="true"
+                    aria-controls="collapseOne"
+                  >
+                    <div class="d-flex justify-content-between">
+                      <p>Fast&Delightful và KFC chỗ nào ngon hơn ?</p>
+                      <div class="fas-caret-left">
+                        <i class="fas fa-caret-left"></i>
+                      </div>
+                    </div>
+                  </button>
+                </h5>
+              </div>
+              <div
+                id="collapse_faqs_20"
+                class="collapse"
+                aria-labelledby="headingThree"
+              >
+                <div class="card-body">Texas.</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- FOOTER-BEGIN -->
+    <div class="container-fluid v_footer mt-5">
+      <div class="row">
+        <div
+          class="
+            col-12 col-sm-12 col-md-3 col-lg-3
+            cpl-xl-3
+            text-white
+            d-sm-none d-block
+          "
+        >
+          <p class="text-center">Kết nối trực tiếp với chúng tôi</p>
+          <input
+            type="email"
+            class="v_email"
+            placeholder="Điền email của bạn..."
+          />
+          <br />
+          <br />
+          <a href="#" class="v_sent">Chúng tôi lắng nghe bạn!</a
+          ><br /><br /><br /><br />
+        </div>
+
+        <div class="col-6 col-sm-6 col-md-3 col-lg-3 cpl-xl-3 text-white">
+          <p class="v_gotham">Tìm hiểu</p>
+          <a href="aboutus.html" class="v_footerlink d-sm-block d-none"
+            >Giới thiệu Fast&Delightful<br
+          /></a>
+          <a href="aboutus.html" class="v_footerlink d-sm-none d-block"
+            >Giới thiệu<br /><br />Fast&Delightful<br /><br
+          /></a>
+          <div class="d-sm-none d-block v_cucai"></div>
+          <a href="../thu/menu.html" class="v_footerlink">Thực đơn</a><br />
+          <div class="d-sm-none d-block v_cucai"></div>
+          <a href="../huy/khuyenmai.html" class="v_footerlink">Khuyến mãi</a
+          ><br />
+          <div class="d-sm-none d-block v_cucai"></div>
+          <a href="../thu/ho_tro.html" class="v_footerlink">Hỗ trợ</a><br />
+        </div>
+
+        <div class="col-6 col-sm-6 col-md-3 col-lg-3 cpl-xl-3 text-white">
+          <p class="v_gotham d-sm-block d-none">Cơ hội nghề nghiệp</p>
+          <p class="v_gotham d-sm-none d-block">Cơ hội<br />nghề nghiệp</p>
+          <a href="#" class="v_footerlink d-sm-block d-none"
+            >Thông tin tuyển dụng<br
+          /></a>
+          <a href="#" class="v_footerlink d-sm-none d-block"
+            >Thông tin<br /><br />tuyển dụng<br /><br
+          /></a>
+          <div class="d-sm-none d-block v_cucai"></div>
+          <a href="#" class="v_footerlink d-sm-block d-none"
+            >Đầu tư doanh nghiệp<br
+          /></a>
+          <div class="d-sm-none d-block v_caithao"></div>
+          <a href="#" class="v_footerlink d-sm-none d-block"
+            >Đầu tư<br /><br />doanh nghiệp<br /><br
+          /></a>
+          <div class="d-sm-none d-block v_cucai"></div>
+          <a href="#" class="v_footerlink">Khu vực TP.HCM</a><br />
+          <div class="d-sm-none d-block v_cucai"></div>
+          <a href="#" class="v_footerlink">Khu vực Hà Nội</a><br /><br />
+        </div>
+
+        <div class="col-6 col-sm-6 col-md-3 col-lg-3 cpl-xl-3 text-white">
+          <div class="d-sm-block d-none">
+            <p class="v_gotham">Chính sách và điều khoản</p>
+            <a href="faqs.html" class="v_footerlink"
+              >Một số câu hỏi thường gặp</a
+            ><br />
+            <a href="#" class="v_footerlink">Điều khoản và điều kiện</a><br />
+            <a href="#" class="v_footerlink">Chính sách về quyền riêng tư</a
+            ><br />
+            <a href="#" class="v_footerlink">Chính sách giải quyết khiếu nại</a
+            ><br />
+          </div>
+
+          <div class="d-sm-none d-block">
+            <p class="v_gotham v_batd">Chính sách và<br />điều khoản</p>
+            <a href="faqs.html" class="v_footerlink"
+              >Một số câu hỏi<br />thường gặp</a
+            ><br />
+            <div class="d-sm-none d-block v_cucai"></div>
+            <a href="#" class="v_footerlink">Điều khoản và<br />điều kiện</a
+            ><br />
+            <div class="d-sm-none d-block v_cucai"></div>
+            <a href="#" class="v_footerlink">Chính sách về quyền riêng tư</a
+            ><br />
+            <div class="d-sm-none d-block v_cucai"></div>
+            <a href="#" class="v_footerlink d-sm-block d-none"
+              >Chính sách giải quyết khiếu nại<br
+            /></a>
+            <div class="d-sm-none d-block v_caithao"></div>
+            <a href="#" class="v_footerlink d-sm-none d-block"
+              >Chính sách<br /><br />giải quyết<br /><br />khiếu nại<br /><br
+            /></a>
+          </div>
+        </div>
+
+        <div class="col-6 col-sm-6 col-md-3 col-lg-3 cpl-xl-3 text-white">
+          <p class="v_gotham v_batd d-sm-block d-none">Hình thức thanh toán</p>
+          <p class="v_gotham v_batd d-sm-none d-block">
+            Hình thức<br />thanh toán
+          </p>
+          <p>COD/Thanh toán khi nhận hàng</p>
+
+          <div class="row v_payment">
+            <div class="col-6 col-sm-6 col-md-3 col-lg-3 cpl-xl-3">
+              <img
+                src="img/mastercard.svg"
+                class="w-100 v_payment"
+              /><br /><br />
+            </div>
+
+            <div class="col-6 col-sm-6 col-md-3 col-lg-3 cpl-xl-3">
+              <img src="img/visacard.svg" class="w-100 v_payment" />
+            </div>
+
+            <div class="col-6 col-sm-6 col-md-3 col-lg-3 cpl-xl-3">
+              <img src="img/logo-momo.png" class="w-100 v_payment" />
+            </div>
+
+            <div class="col-6 col-sm-6 col-md-3 col-lg-3 cpl-xl-3">
+              <img src="img/zalo-pay.png" class="w-100 v_payment" />
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <br />
+
+      <div class="v_line d-sm-block d-none"></div>
+
+      <div class="d-sm-block d-none"><br /><br /></div>
+
+      <div class="row">
+        <div
+          class="col-12 col-sm-12 col-md-3 col-lg-3 cpl-xl-3 text-white v_ll"
+        >
+          <p>Liên lạc</p>
+          <p>
+            Hotline: 1900 0868<br />
+            (Miễn phí, 8h-21h từ thứ 2 đến thứ 6)<br />
+            Hotline: 1900 1269<br />
+            (1.000đồng/phút, 8h30-21h<span class="d-sm-none d-block"></span>thứ
+            7 và CN)
+          </p>
+        </div>
+
+        <div class="col-12 col-sm-12 col-md-6 col-lg-6 cpl-xl-6 text-white">
+          <br />
+          <p>
+            <span class="v_gotham">Địa chỉ 1:</span>&nbsp&nbsp&nbsp 223 Đ. Trần
+            Hưng Đạo, P.Cô Giang, Q.1, TP.HCM<br />
+            <span class="v_gotham">Địa chỉ 2:</span>&nbsp&nbsp&nbsp 53 Hồng Hà,
+            Phường 2, Tân Bình, TP.HCM Q.1, TP.HCM<br />
+            <span class="v_gotham">Địa chỉ 3:</span>&nbsp&nbsp&nbsp 744 Đ. La
+            Thành, Thành Công, Ba Đình, Hà Nội<br />
+            <span class="v_gotham">Địa chỉ 4:</span>&nbsp&nbsp&nbsp 41 Ngũ Hành
+            Sơn, Bắc Mỹ Phú, Ngũ Hành Sơn, Đà Nẵng
+          </p>
+        </div>
+
+        <div
+          class="
+            col-12 col-sm-12 col-md-3 col-lg-3
+            cpl-xl-3
+            text-white
+            d-sm-block d-none
+          "
+        >
+          <p>Kết nối trực tiếp với chúng tôi</p>
+          <input
+            type="email"
+            class="v_email"
+            placeholder="Điền email của bạn..."
+          />
+          <br /><br />
+          <a href="#" class="v_sent">Chúng tôi lắng nghe bạn!</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="v_copyright text-white d-sm-block d-none">
+      <p class="v_copyleft m-0">
+        ©2017-2018 Fast&Delightful. All Rights Reserved.
+      </p>
+    </div>
+
+    <div class="v_copyright text-white d-sm-none d-block">
+      <p class="v_copyleft m-0">
+        ©2017-2018 Fast&Delightful. All Rights Reserved.
+      </p>
+    </div>
+
+    <!-- FOOTER-END -->
+
+    <!-- Hover menu trượt xuống -->
+    <script type="text/javascript" src="js/jquery.min.js"></script>
+    <script type="text/javascript" src="js/popper.js"></script>
+    <script type="text/javascript" src="js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="slick/slick.min.js"></script>
+    <script type="text/javascript" src="js/custom.js"></script>
+  </body>
+</html>

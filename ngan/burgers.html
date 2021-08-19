@@ -1,0 +1,1320 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Bánh burgers</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.css" />
+    <link rel="stylesheet" type="text/css" href="slick/slick.css" />
+    <link rel="stylesheet" type="text/css" href="slick/slick-theme.css" />
+    <link rel="stylesheet" type="text/css" href="css/all.css" />
+    <link rel="stylesheet" type="text/css" href="fontawesome/css/all.min.css" />
+    <link rel="stylesheet" type="text/css" href="css/burgers.css" />
+  </head>
+  <body>
+    <!-- pop up modal -->
+    <div class="modal fade" id="popup_modal" tabindex="-1">
+      <div class="modal-dialog modal-xl">
+        <div class="modal-content ads_modal">
+          <div class="modal-header border-0">
+            <button
+              type="button"
+              class="close"
+              data-dismiss="modal"
+              aria-label="Close"
+            >
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body d-flex">
+            <div class="w-50 position-relative d-none d-xl-block">
+              <div class="line_01"></div>
+              <div class="circle_01 d-flex">
+                <p class="m-auto text-light h5">Giòn rụm</p>
+              </div>
+
+              <div class="line_02"></div>
+              <div class="circle_02 d-flex">
+                <p class="m-auto text-light h5">Tan chảy</p>
+              </div>
+              <div class="line_03"></div>
+              <div class="circle_03 d-flex">
+                <p class="m-auto text-dark h5">Mềm dai</p>
+              </div>
+            </div>
+            <div class="modal_content">
+              <span class="p-2 h2 bg-danger text-light">MỚI RA MẮT</span>
+              <div class="mt-5">
+                <h1 style="font-family: svn-gotham black">
+                  Burger bò nướng than
+                </h1>
+                <h2>Giá trải nghiệm chỉ</h2>
+                <h1 class="text-danger" style="font-family: svn-gotham black">
+                  39.000vnđ
+                </h1>
+              </div>
+              <div class="try_it mt-5 w-100 text-center p-3 rounded">
+                <h1 class="text-light">Thử ngay</h1>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Menu lăn xuống hiện ra -->
+    <div class="d-none d-sm-block">
+      <nav class="navbar navbar-expand-lg bg-dark scrollingnav">
+        <a class="navbar-brand d-none d-lg-block ml-3" href="#"
+          ><img src="img/logo-nav-02.svg" class="logo_nav_2 p-1" width="80%"
+        /></a>
+        <div class="collapse navbar-collapse menu" id="mynavbar">
+          <ul class="navbar-nav mr-auto t">
+            <li class="nav-item active">
+              <a class="nav-link text-light" href="../thang/home.html"
+                >Trang chủ
+              </a>
+            </li>
+            <li class="nav-item dropdown">
+              <a
+                class="nav-link dropdown-toggle text-light"
+                href="../thu/menu.html"
+                id="navbarDropdown"
+                role="button"
+                data-toggle="dropdown"
+                aria-haspopup="true"
+                aria-expanded="false"
+              >
+                Thực đơn
+              </a>
+              <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <a class="dropdown-item" href="../thang/garan.html">Gà rán</a>
+                <a class="dropdown-item" href="burgers.html">Bánh burgers</a>
+                <a class="dropdown-item" href="../thu/com.html">Cơm</a>
+                <a class="dropdown-item" href="../huy/combo.html">Combo</a>
+                <a class="dropdown-item" href="../thu/do_uong.html"
+                  >Nước uống/Tráng miệng</a
+                >
+              </div>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link text-light" href="../huy/khuyenmai.html"
+                >Khuyến mãi</a
+              >
+            </li>
+            <li class="nav-item">
+              <a class="nav-link text-light" href="aboutus.html"
+                >Về chúng tôi</a
+              >
+            </li>
+            <li class="nav-item">
+              <a class="nav-link text-light" href="../huy/lienhe.html"
+                >Liên hệ</a
+              >
+            </li>
+            <li class="nav-item dropdown">
+              <a
+                class="nav-link dropdown-toggle text-light"
+                href="../thu/ho_tro.html"
+                id="navbarDropdown"
+                role="button"
+                data-toggle="dropdown"
+                aria-haspopup="true"
+                aria-expanded="false"
+              >
+                Hỗ trợ
+              </a>
+              <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <a class="dropdown-item" href="faqs.html">Câu hỏi thường gặp</a>
+              </div>
+            </li>
+          </ul>
+        </div>
+        <!-- Giỏ hàng đăng nhập desktop -->
+        <div class="ml-auto icon d-none d-lg-block">
+          <button
+            class="myicon bg-transparent border-0"
+            data-toggle="modal"
+            data-target="#cart"
+          >
+            <i class="fas fa-shopping-basket text-light h2"></i>
+          </button>
+          <!-- Cart modal -->
+          <div
+            class="gio_hang modal fade"
+            id="cart"
+            tabindex="1"
+            aria-labelledby="mymodal"
+            aria-hidden="true"
+          >
+            <div class="modal-dialog modal-lg">
+              <div class="modal-content">
+                <div class="modal-header red_bg">
+                  <div class="col-1"></div>
+                  <h5
+                    class="modal-title col-10 text-center text-light"
+                    id="mymodal"
+                  >
+                    Giỏ hàng
+                  </h5>
+                  <button
+                    type="button"
+                    class="close col-1"
+                    data-dismiss="modal"
+                    aria-label="close"
+                  >
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+                </div>
+                <div class="modal-body p-0 yl_bg">
+                  <table class="table_cart" id="tablecart">
+                    <thead class="w-100">
+                      <th class="p-3">Đơn hàng của bạn</th>
+                      <th></th>
+                      <th></th>
+
+                      <th colspan="2" class="p-3 text-right">
+                        <button
+                          id="deleteall"
+                          class="border-0 bg-transparent text-white"
+                        >
+                          Xóa hết
+                        </button>
+                      </th>
+                    </thead>
+                    <tbody class="w-100">
+                      <tr id="dishcart_01">
+                        <td class="w-25 p-3">
+                          <img src="img/dishes/dish_01.png" width="100%" />
+                        </td>
+                        <td class="p-3 w-25">Bánh burger bò</td>
+                        <td class="p-3 w-25">
+                          <div class="quantity h4">
+                            <button class="Subtract">-</button>
+                            <input
+                              class="quantity_input"
+                              type="number"
+                              min="0"
+                              value="0"
+                            />
+                            <button class="Add">+</button>
+                          </div>
+                        </td>
+                        <td class="p-3">49.000đ</td>
+                        <td>
+                          <button
+                            class="border-0 bg-transparent p-2"
+                            id="delete_01"
+                          >
+                            <i class="fas fa-trash-alt"></i>
+                          </button>
+                        </td>
+                      </tr>
+                      <tr id="dishcart_02">
+                        <td class="w-25 p-3">
+                          <img src="img/dishes/dish_02.png" width="100%" />
+                        </td>
+                        <td class="p-3 w-25">Bánh burger cá</td>
+                        <td class="p-3 w-25">
+                          <div class="quantity h4">
+                            <button class="Subtract">-</button>
+                            <input
+                              class="quantity_input"
+                              type="number"
+                              min="0"
+                              value="0"
+                            />
+                            <button class="Add">+</button>
+                          </div>
+                        </td>
+                        <td class="p-3">59.000đ</td>
+                        <td>
+                          <button
+                            class="border-0 bg-transparent p-2"
+                            id="delete_02"
+                          >
+                            <i class="fas fa-trash-alt"></i>
+                          </button>
+                        </td>
+                      </tr>
+                      <tr>
+                        <th
+                          class="p-0 px-5 pb-5 text-light text-left"
+                          colspan="3"
+                        >
+                          Tổng cộng
+                        </th>
+
+                        <th
+                          class="
+                            p-0
+                            pr-5
+                            pl-3
+                            pb-5
+                            total_cart
+                            text-light text-left
+                          "
+                          colspan="2"
+                        >
+                          108.000đ
+                        </th>
+                      </tr>
+                    </tbody>
+                    <tr class="red_bg">
+                      <td colspan="5" class="text-right pt-4 pr-4 pb-3">
+                        <a href="gio_hang.html"
+                          ><div class="rounded-lg p-3 text-center button00">
+                            Tiến hành thanh toán
+                          </div></a
+                        >
+                      </td>
+                    </tr>
+                  </table>
+                  <p id="nothing" class="text-center py-3">
+                    Giỏ hàng của bạn chưa có gì
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <a href="accmanage.html" class="myicon">
+            <i class="fas fa-user text-light h2 ml-3"></i
+          ></a>
+        </div>
+      </nav>
+    </div>
+    <div class="side_click">
+      <div class="toggle_class shadow-lg border-right-0 rounded-left d-flex">
+        <i class="fas fa-chevron-left h5 m-auto text-light"></i>
+      </div>
+      <div class="grr">
+        <div
+          class="
+            side
+            shadow-lg
+            border-right-0
+            p-2
+            rounded-left
+            round-lg
+            d-inline-block
+          "
+        >
+          <button id="backtotop" class="d-block side_button">
+            <i class="fas fa-arrow-up h4 text-light"></i>
+          </button>
+          <a href="#" class="d-block mt-1 ml-2"
+            ><i class="fab fa-facebook-f h4 text-light"></i
+          ></a>
+          <a href="#" class="d-block mt-1 ml-2"
+            ><i class="fab fa-instagram h4 text-light"></i
+          ></a>
+        </div>
+      </div>
+    </div>
+    <!--nav 1440-->
+    <div class="bg_nav_big d-none d-xl-block">
+      <nav class="navbar navbar-expand-lg py-0 nav_1">
+        <div class="container container_pad py-3">
+          <p class="pl-3">Hotline đặt hàng: 01236908375</p>
+          <p class="pr-3">
+            Giao hàng đến &nbsp; <span class="fontspan">HCM</span>&nbsp;&nbsp;<a
+              href="accmanage.html"
+              class="nav_item"
+              >Thay đổi</a
+            >
+          </p>
+        </div>
+      </nav>
+      <nav class="navbar navbar-expand-lg nav_1">
+        <div class="container nav_fix1 container_pad">
+          <div class="border_nav mr-auto p-3">
+            <a href="../thang/home.html" class="nav_item1 fontspan"
+              >Trang chủ</a
+            >
+            <a href="../thu/menu.html" class="nav_item1 fontspan">Thực đơn</a>
+            <a href="../huy/khuyenmai.html" class="nav_item1 fontspan"
+              >Khuyến mãi</a
+            >
+          </div>
+          <a href="../thang/home.html" class="navbar-brand m-auto"
+            ><img src="img/logo.png" class="logo_png"
+          /></a>
+          <div class="border_nav ml-auto p-3">
+            <a href="aboutus.html" class="nav_item2 fontspan">Về chúng tôi</a>
+            <a href="../huy/lienhe.html" class="nav_item2 fontspan">Liên hệ</a>
+            <a href="../thu/ho_tro.html" class="nav_item2 fontspan">Hỗ trợ</a>
+          </div>
+        </div>
+      </nav>
+      <h1 class="big_text">Bánh Burgers</h1>
+    </div>
+    <!--end nav 1440-->
+    <!--Nav 320-->
+    <div class="bg_nav d-sm-none d-block w-100">
+      <nav class="navbar navbar-expand-sm">
+        <button
+          class="navbar-toggler mr-auto"
+          type="button"
+          data-toggle="collapse"
+          data-target="#top_nav2"
+          style="color: white"
+        >
+          <i class="fas fa-bars"></i>
+        </button>
+        <a href="../thang/home.html" class="navbar-brand logo_320 m-auto"
+          ><img src="img/logo.png"
+        /></a>
+        <div class="ml-auto form-inline">
+          <a
+            data-toggle="modal"
+            data-target="#gio_modal"
+            class="nav-link text-light icon"
+            ><i class="fas fa-shopping-basket"></i
+          ></a>
+          <a href="accmanage.html" class="nav-link icon"
+            ><i class="fas fa-user"></i
+          ></a>
+        </div>
+
+        <div id="top_nav2" class="collapse navbar-collapse">
+          <ul class="navbar-nav drop">
+            <li class="nav-item ml-3">
+              <a href="../thang/home.html" class="nav_item fontspan"
+                >Trang chủ</a
+              >
+            </li>
+            <li class="nav-item ml-3 dropdown">
+              <a
+                class="fontspan nav-link dropdown-toggle text-light"
+                href="../thu/menu.html"
+                id="navbarDropdown"
+                role="button"
+                data-toggle="dropdown"
+                aria-haspopup="true"
+                aria-expanded="false"
+              >
+                Thực đơn
+              </a>
+              <div
+                class="dropdown-menu drop_menu_320 px-0 pb-2"
+                aria-labelledby="navbarDropdown"
+              >
+                <a class="pl-2 dropdown-item" href="../thang/garan.html"
+                  >Gà rán</a
+                >
+                <a class="pl-2 dropdown-item" href="burgers.html"
+                  >Bánh burgers</a
+                >
+                <a class="pl-2 dropdown-item" href="../thu/com.html">Cơm</a>
+                <a class="pl-2 dropdown-item" href="../huy/combo.html">Combo</a>
+                <a class="pl-2 dropdown-item" href="../thu/do_uong.html"
+                  >Nước uống/Tráng miệng</a
+                >
+              </div>
+            </li>
+
+            <li class="nav-item ml-3">
+              <a href="../huy/khuyenmai.html" class="nav_item fontspan"
+                >Khuyến mãi</a
+              >
+            </li>
+            <li class="nav-item ml-3">
+              <a href="aboutus.html" class="nav_item fontspan">Về chúng tôi</a>
+            </li>
+            <li class="nav-item ml-3">
+              <a href="../huy/lienhe.html" class="nav_item fontspan">Liên hệ</a>
+            </li>
+            <li class="nav-item ml-3 dropdown">
+              <a
+                class="fontspan nav-link dropdown-toggle text-light"
+                href="../thu/ho_tro.html"
+                id="navbarDropdown"
+                role="button"
+                data-toggle="dropdown"
+                aria-haspopup="true"
+                aria-expanded="false"
+              >
+                Hỗ trợ
+              </a>
+              <div
+                class="dropdown-menu drop_menu_320 px-0 pb-2"
+                aria-labelledby="navbarDropdown"
+              >
+                <a class="pl-2 dropdown-item" href="faqs.html"
+                  >Câu hỏi thường gặp</a
+                >
+              </div>
+            </li>
+          </ul>
+        </div>
+      </nav>
+    </div>
+    <!-- Giỏ hàng đăng nhập mobile -->
+    <div class="modal fade" id="gio_modal">
+      <div class="modal-dialog modal-sm">
+        <div class="modal-content">
+          <!--Header-->
+          <div class="modal-header red_bg py-3">
+            <div class="col-1"></div>
+            <h4 class="fontspan text-light col-10 m-auto text-center">
+              Giỏ hàng
+            </h4>
+            <button
+              class="close col-1 text-light"
+              type="button"
+              data-dismiss="modal"
+            >
+              &times;
+            </button>
+          </div>
+
+          <!--Body-->
+          <div class="modal-body yl_bg">
+            <table class="table_cart" id="tablecart">
+              <tbody class="w-100">
+                <tr id="dishcart_03" class="">
+                  <td class="col-4 p-1">
+                    <img src="img/dishes/dish_01.png" width="100%" />
+                  </td>
+                  <td class="col-5 p-1">Bánh burger bò</td>
+                  <td class="col-3 p-1">
+                    <div class="quantity h6 m-0">
+                      <button class="Subtract">-</button>
+                      <input
+                        class="quantity_input"
+                        type="number"
+                        min="1"
+                        value="1"
+                      />
+                      <button class="Add">+</button>
+                    </div>
+                  </td>
+                </tr>
+                <tr id="dishcart_031">
+                  <td class="p-3 text-light" colspan="2">49.000đ</td>
+                  <td class="text-right pr-3">
+                    <button
+                      class="ml-auto border-0 bg-transparent p-2"
+                      id="delete_03"
+                    >
+                      <i class="fas fa-trash-alt"></i>
+                    </button>
+                  </td>
+                </tr>
+                <tr id="dishcart_04">
+                  <td class="col-4 p-1">
+                    <img src="img/dishes/dish_02.png" width="100%" />
+                  </td>
+                  <td class="col-5 p-1">Bánh burger cá</td>
+                  <td class="col-3 p-1">
+                    <div class="quantity h6 m-0">
+                      <button class="Subtract">-</button>
+                      <input
+                        class="quantity_input"
+                        type="number"
+                        min="1"
+                        value="1"
+                      />
+                      <button class="Add">+</button>
+                    </div>
+                  </td>
+                </tr>
+                <tr id="dishcart_041">
+                  <td class="p-3 text-light" colspan="2">59.000đ</td>
+                  <td class="text-right pr-3">
+                    <button class="border-0 bg-transparent p-2" id="delete_04">
+                      <i class="fas fa-trash-alt"></i>
+                    </button>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <!--Footer-->
+          <div class="modal-footer red_bg py-3">
+            <a href="gio_hang.html" class="btn_1 w-75 m-auto text-center"
+              >Tiến hành đặt hàng</a
+            >
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- body -->
+
+    <div class="container">
+      <nav aria-label="breadcrumb" class="bg_breadcrumb">
+        <ol class="breadcrumb bg-transparent pl-0 ml-0">
+          <li class="breadcrumb-item">
+            <a href="../thang/home.html" class="text-secondary">Trang chủ</a>
+          </li>
+          <li class="breadcrumb-item">
+            <a href="../thu/menu.html" class="text-secondary">Thực đơn</a>
+          </li>
+          <li class="breadcrumb-item active text-dark" aria-current="page">
+            Bánh Burgers
+          </li>
+        </ol>
+      </nav>
+      <div class="row">
+        <div class="p-3">
+          <h4 class="n_title">Bò</h4>
+          <p class="float-left">Sắp xếp theo:</p>
+          <select class="float-left ml-3 border-0 p-1 selection">
+            <option>Giá tăng dần</option>
+            <option>Giá giảm dần</option>
+          </select>
+        </div>
+      </div>
+
+      <!-- card 1 -->
+      <div class="row">
+        <!--Begin-Card-->
+
+        <div class="col-12 col-sm-12 col-md-4 col-lg-4 col-xl-4 m-0 p-3">
+          <div class="card b_card rounded-FD p-3">
+            <!--IMG-->
+            <div class="like"><i class="fas fa-heart"></i></div>
+            <a class="img_box rounded-FD w-100" href="../thang/chitiet.html">
+              <img src="img/dishes/dish_02.png" />
+              <div class="img_box_background w-100 h-100 rounded-FD"></div>
+            </a>
+
+            <!--TEXT-->
+
+            <div class="card_text w-100 px-3 pt-4">
+              <div class="row stars pb-3">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star-half-alt"></i>
+              </div>
+              <div class="row pb-3">
+                <a href="../thang/chitiet.html"
+                  ><h4 class="title_card">Bò tắm phô mai</h4></a
+                >
+              </div>
+              <div class="row pb-3">
+                <p>Burger thịt bò nướng ngập tràn trong thiệt nhiều phô mai</p>
+              </div>
+              <div class="row">
+                <div class="form-inline w-100">
+                  <h4 class="price mr-auto col-6 pl-0">59.000đ</h4>
+                  <a class="btn cart_button ml-auto rounded-pill col-3 p-2"
+                    ><i class="fas fa-shopping-basket"></i
+                  ></a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!--End-Card-->
+
+        <!--Begin-Card-->
+
+        <div class="col-12 col-sm-12 col-md-4 col-lg-4 col-xl-4 m-0 p-3">
+          <div class="card b_card rounded-FD p-3">
+            <!--IMG-->
+            <div class="like"><i class="fas fa-heart"></i></div>
+            <a class="img_box rounded-FD w-100" href="../thang/chitiet.html">
+              <img src="img/dishes/dish_03.png" />
+              <div class="img_box_background w-100 h-100 rounded-FD"></div>
+            </a>
+
+            <!--TEXT-->
+
+            <div class="card_text w-100 px-3 pt-4">
+              <div class="row stars pb-3">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star-half-alt"></i>
+              </div>
+              <div class="row pb-3">
+                <a href="../thang/chitiet.html"
+                  ><h4 class="title_card">Bò khoai tây</h4></a
+                >
+              </div>
+              <div class="row pb-3">
+                <p>
+                  Thịt bò kết hợp với khoai tây chiên cắt lát siêu giòn ngon bạn
+                  sẽ phải ngất xỉu
+                </p>
+              </div>
+              <div class="row">
+                <div class="form-inline w-100">
+                  <h4 class="price mr-auto col-6 pl-0">45.000đ</h4>
+                  <a class="btn cart_button ml-auto rounded-pill col-3 p-2"
+                    ><i class="fas fa-shopping-basket"></i
+                  ></a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!--End-Card-->
+
+        <!--Begin-Card-->
+
+        <div class="col-12 col-sm-12 col-md-4 col-lg-4 col-xl-4 m-0 p-3">
+          <div class="card b_card rounded-FD p-3">
+            <!--IMG-->
+            <div class="like"><i class="fas fa-heart"></i></div>
+            <a class="img_box rounded-FD w-100" href="../thang/chitiet.html">
+              <img src="img/dishes/dishes_05.png" />
+              <div class="img_box_background w-100 h-100 rounded-FD"></div>
+            </a>
+
+            <!--TEXT-->
+
+            <div class="card_text w-100 px-3 pt-4">
+              <div class="row stars pb-3">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star-half-alt"></i>
+              </div>
+              <div class="row pb-3">
+                <a href="../thang/chitiet.html"
+                  ><h4 class="title_card">Bò whopper</h4></a
+                >
+              </div>
+              <div class="row pb-3">
+                <p>
+                  Món burger đến từ Texas miền Tây nước Mĩ sẽ khiến bạn sững sờ
+                </p>
+              </div>
+              <div class="row">
+                <div class="form-inline w-100">
+                  <h4 class="price mr-auto col-6 pl-0">105.000đ</h4>
+                  <a class="btn cart_button ml-auto rounded-pill col-3 p-2"
+                    ><i class="fas fa-shopping-basket"></i
+                  ></a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!--End-Card-->
+        <div class="col-12 col-lg-12">
+          <div class="promo_slick slider">
+            <div class="slide_box p-0">
+              <div class="p-3 promotion">
+                <a href="../thang/chitiet.html">
+                  <div class="promo_img p-3">
+                    <img src="img/dishes/dish_01.png" height="100%" />
+                  </div>
+                </a>
+                <div class="promo_content p-3">
+                  <span>Đặc biệt</span>
+                  <a href="../thang/chitiet.html" class="text-decoration-none">
+                    <h1>Burger cá ngừ sốt cay</h1>
+                  </a>
+                  <p>
+                    Burger cá ngừ là một loại thức ăn bao gồm bánh mì kẹp cá ngừ
+                    xay ở giữa. Với sự kết hợp của sốt mayonnaise đặc biệt và
+                    bắp cải cay D'onette đến từ vùng Trung Âu nước Pháp mang đến
+                    vị cay tự nhiên đột phá.
+                  </p>
+                  <h3>69.000vnđ</h3>
+                  <div
+                    class="
+                      d-flex
+                      justify-content-end
+                      card-footer
+                      border-0
+                      bg-transparent
+                    "
+                  >
+                    <a class="btn cart_button ml-auto rounded-pill pr-3 pl-3"
+                      ><i class="fas fa-shopping-basket"></i
+                    ></a>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="slide_box p-0">
+              <div class="p-3 promotion">
+                <a href="../thang/chitiet.html">
+                  <div class="promo_img p-3 d-flex">
+                    <img
+                      src="img/dishes/dishes_05.png"
+                      class="align-self-center"
+                    />
+                  </div>
+                </a>
+                <div class="promo_content p-3">
+                  <span class="bg-danger">Mới</span>
+                  <a href="../thang/chitiet.html" class="text-decoration-none">
+                    <h1>Bò khoai giòn tràn</h1>
+                  </a>
+                  <p>
+                    Trăm năm trong cõi người ta, khoai ăn với bò mới là đúng
+                    nha. Thịt bò nướng kết hợp với thiệt nhiều khoai tây ăn vừa
+                    ngon vừa no nha quí vị.
+                  </p>
+                  <h3>69.000vnđ</h3>
+                  <div
+                    class="
+                      d-flex
+                      justify-content-end
+                      card-footer
+                      border-0
+                      bg-transparent
+                    "
+                  >
+                    <a class="btn cart_button ml-auto rounded-pill pr-3 pl-3"
+                      ><i class="fas fa-shopping-basket"></i
+                    ></a>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="slide_box p-0">
+              <div class="p-3 promotion">
+                <a href="../thang/chitiet.html">
+                  <div class="promo_img p-3 d-flex">
+                    <img
+                      src="img/dishes/dishes_06.png"
+                      class="align-self-center"
+                    />
+                  </div>
+                </a>
+                <div class="promo_content p-3">
+                  <span class="bg-dark">Ưu đãi</span>
+                  <a href="../thang/chitiet.html" style="text-decoration: none">
+                    <h1>Bạn thân bò và phô mai</h1>
+                  </a>
+                  <p>
+                    Sống trên đời ai cũng có bạn thân ! Burger của cặp bài trùng
+                    bò và phô mai sẽ đem lại cho bạn hương vị ấm áp hạnh phúc,
+                    họ không bao giờ chơi xấu sau lưng nhau, thật là một tình
+                    bạn đẹp ! .
+                  </p>
+                  <p
+                    style="text-decoration: line-through"
+                    class="float-left p-2"
+                  >
+                    49.000vnđ
+                  </p>
+                  <h3>39.000vnđ</h3>
+                  <div
+                    class="
+                      d-flex
+                      justify-content-end
+                      card-footer
+                      border-0
+                      bg-transparent
+                    "
+                  >
+                    <a class="btn cart_button ml-auto rounded-pill pr-3 pl-3"
+                      ><i class="fas fa-shopping-basket"></i
+                    ></a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- gàaaaaaaaaaa -->
+      <div class="row">
+        <div class="p-3">
+          <h4 class="n_title">Gà</h4>
+          <p class="float-left">Sắp xếp theo:</p>
+          <select class="float-left ml-3 border-0 p-1 selection">
+            <option>Giá tăng dần</option>
+            <option>Giá giảm dần</option>
+          </select>
+        </div>
+      </div>
+      <!-- card 4 -->
+      <div class="row">
+        <!--Begin-Card-->
+        <div class="col-12 col-sm-12 col-md-4 col-lg-4 col-xl-4 m-0 p-3">
+          <div class="card b_card rounded-FD p-3">
+            <!--IMG-->
+            <div class="like"><i class="fas fa-heart"></i></div>
+            <a class="img_box rounded-FD w-100" href="../thang/chitiet.html">
+              <img src="img/dishes/dish_07.png" />
+              <div class="img_box_background w-100 h-100 rounded-FD"></div>
+            </a>
+            <!--TEXT-->
+            <div class="card_text w-100 px-3 pt-4">
+              <div class="row stars pb-3">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star-half-alt"></i>
+              </div>
+              <div class="row pb-3">
+                <a href="../thang/chitiet.html"
+                  ><h4 class="title_card">Burger gà cay</h4></a
+                >
+              </div>
+              <div class="row pb-3">
+                <p>Gà rất cay ăn với burger rất ngon</p>
+              </div>
+              <div class="row">
+                <div class="form-inline w-100">
+                  <h4 class="price mr-auto col-6 pl-0">59.000đ</h4>
+                  <a class="btn cart_button ml-auto rounded-pill col-3 p-2"
+                    ><i class="fas fa-shopping-basket"></i
+                  ></a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!--End-Card-->
+
+        <!--Begin-Card-->
+        <div class="col-12 col-sm-12 col-md-4 col-lg-4 col-xl-4 m-0 p-3">
+          <div class="card b_card rounded-FD p-3">
+            <!--IMG-->
+            <div class="like"><i class="fas fa-heart"></i></div>
+            <a class="img_box rounded-FD w-100" href="../thang/chitiet.html">
+              <img src="img/dishes/dish_08.png" />
+              <div class="img_box_background w-100 h-100 rounded-FD"></div>
+            </a>
+            <!--TEXT-->
+            <div class="card_text w-100 px-3 pt-4">
+              <div class="row stars pb-3">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star-half-alt"></i>
+              </div>
+              <div class="row pb-3">
+                <a href="../thang/chitiet.html"
+                  ><h4 class="title_card">Burger gà deluxe</h4></a
+                >
+              </div>
+              <div class="row pb-3">
+                <p>Thật to và sang trọng !</p>
+              </div>
+              <div class="row">
+                <div class="form-inline w-100">
+                  <h4 class="price mr-auto col-6 pl-0">45.000đ</h4>
+                  <a class="btn cart_button ml-auto rounded-pill col-3 p-2"
+                    ><i class="fas fa-shopping-basket"></i
+                  ></a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!--End-Card-->
+
+        <div class="col-xl-4 d-none d-lg-block position-relative pt-3">
+          <video src="img/Comp 1.mp4" muted loop autoplay></video>
+          <div
+            class="
+              position-absolute
+              pr-4
+              border-1
+              d-flex
+              flex-column
+              w-100
+              mt-3
+            "
+          >
+            <h5 class="myfont mx-auto">Bạn có biết ?</h5>
+            <img src="img/peopleee.jpg" width="98.5%" class="mt-3" />
+            <p class="myfont mt-3">
+              Đồ ăn nhanh giúp ổn định lượng đường trong máu, giúp kiểm soát cân
+              nặng và <br />
+              tâm trạng.
+            </p>
+            <p>
+              “Ăn vặt giúp lượng đường trong máu ổn định và giúp bạn không bị
+              quá đói giữa các bữa ăn", Debra Waterhouse, thạc sỹ y tế công cộng
+              người Mỹ cho biết. Nhà dinh dưỡng người Mỹ Megan Mullin khuyến cáo
+              khách hàng của cô cứ 3 đến 5 giờ đồng hồ lại ăn một bữa nhỏ. “Bạn
+              nên thường xuyên ăn những bữa nhỏ, đồng thời ăn nhiều hơn khi phải
+              vận động nhiều. <br />Nếu cân bằng được năng lượng nạp vào với
+              năng lượng tiêu thụ, bạn có thể dễ dàng kiểm soát cân nặng của
+              mình”. Những đồ ăn vặt lành mạnh giống như nhiên liệu cháy chậm,
+              cung cấp cho bạn năng lượng suốt cả ngày.<br />
+              Việc ăn vặt vài lần trong ngày giúp xua đuổi cơn buồn ngủ sau khi
+              ăn - cơn buồn ngủ bắt nguồn từ việc hấp thụ quá nhiều calorie cùng
+              lúc.
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="other_row">
+        <!-- row 2 -->
+        <div class="row">
+          <!--Begin-Card-->
+          <div class="col-12 col-sm-12 col-md-4 col-lg-4 col-xl-4 m-0 p-3">
+            <div class="card b_card rounded-FD p-3">
+              <!--IMG-->
+              <div class="like"><i class="fas fa-heart"></i></div>
+              <a class="img_box rounded-FD w-100" href="../thang/chitiet.html">
+                <img src="img/dishes/dish_09.png" />
+                <div class="img_box_background w-100 h-100 rounded-FD"></div>
+              </a>
+              <!--TEXT-->
+              <div class="card_text w-100 px-3 pt-4">
+                <div class="row stars pb-3">
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star-half-alt"></i>
+                </div>
+                <div class="row pb-3">
+                  <a href="../thang/chitiet.html"
+                    ><h4 class="title_card">Sandwich gà</h4></a
+                  >
+                </div>
+                <div class="row pb-3">
+                  <p>
+                    Hamburger gà nhưng kiểu bánh mì nhưng ăn giống hamburger
+                  </p>
+                </div>
+                <div class="row">
+                  <div class="form-inline w-100">
+                    <h4 class="price mr-auto col-6 pl-0">105.000đ</h4>
+                    <a class="btn cart_button ml-auto rounded-pill col-3 p-2"
+                      ><i class="fas fa-shopping-basket"></i
+                    ></a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!--End-Card-->
+          <!--Begin-Card-->
+          <div class="col-12 col-sm-12 col-md-4 col-lg-4 col-xl-4 m-0 p-3">
+            <div class="card b_card rounded-FD p-3">
+              <!--IMG-->
+              <div class="like"><i class="fas fa-heart"></i></div>
+              <a class="img_box rounded-FD w-100" href="../thang/chitiet.html">
+                <img src="img/dishes/dish_10.png" />
+                <div class="img_box_background w-100 h-100 rounded-FD"></div>
+              </a>
+              <!--TEXT-->
+              <div class="card_text w-100 px-3 pt-4">
+                <div class="row stars pb-3">
+                  <i class="fas fa-star"></i><i class="fas fa-star"></i
+                  ><i class="fas fa-star"></i><i class="fas fa-star"></i
+                  ><i class="fas fa-star-half-alt"></i>
+                </div>
+                <div class="row pb-3">
+                  <a href="../thang/chitiet.html"
+                    ><h4 class="title_card">Burger gà siêu to</h4></a
+                  >
+                </div>
+                <div class="row pb-3">
+                  <p>Bạn không thể nào cắn mà không làm rơi xuống bàn</p>
+                </div>
+                <div class="row">
+                  <div class="form-inline w-100">
+                    <h4 class="price mr-auto col-6 pl-0">59.000đ</h4>
+                    <a class="btn cart_button ml-auto rounded-pill col-3 p-2"
+                      ><i class="fas fa-shopping-basket"></i
+                    ></a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!--End-Card-->
+        </div>
+        <div class="row">
+          <!--Begin-Card-->
+          <div class="col-12 col-sm-12 col-md-4 col-lg-4 col-xl-4 m-0 p-3">
+            <div class="card b_card rounded-FD p-3">
+              <!--IMG-->
+              <div class="like"><i class="fas fa-heart"></i></div>
+              <a class="img_box rounded-FD w-100" href="../thang/chitiet.html">
+                <img src="img/dishes/dish_11.png" />
+                <div class="img_box_background w-100 h-100 rounded-FD"></div>
+              </a>
+              <!--TEXT-->
+              <div class="card_text w-100 px-3 pt-4">
+                <div class="row stars pb-3">
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star-half-alt"></i>
+                </div>
+                <div class="row pb-3">
+                  <a href="../thang/chitiet.html"
+                    ><h4 class="title_card">Burger gà</h4></a
+                  >
+                </div>
+                <div class="row pb-3">
+                  <p>
+                    Cho những con người yêu thích gà nhưng muốn ăn kèm tinh bột
+                  </p>
+                </div>
+                <div class="row">
+                  <div class="form-inline w-100">
+                    <h4 class="price mr-auto col-6 pl-0">45.000đ</h4>
+                    <a class="btn cart_button ml-auto rounded-pill col-3 p-2"
+                      ><i class="fas fa-shopping-basket"></i
+                    ></a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!--End-Card-->
+          <!--Begin-Card-->
+          <div class="col-12 col-sm-12 col-md-4 col-lg-4 col-xl-4 m-0 p-3">
+            <div class="card b_card rounded-FD p-3">
+              <!--IMG-->
+              <div class="like"><i class="fas fa-heart"></i></div>
+              <a class="img_box rounded-FD w-100" href="../thang/chitiet.html">
+                <img src="img/dishes/dish_13.png" />
+                <div class="img_box_background w-100 h-100 rounded-FD"></div>
+              </a>
+              <!--TEXT-->
+              <div class="card_text w-100 px-3 pt-4">
+                <div class="row stars pb-3">
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star-half-alt"></i>
+                </div>
+                <div class="row pb-3">
+                  <a href="../thang/chitiet.html"
+                    ><h4 class="title_card">Burger gà vị cá</h4></a
+                  >
+                </div>
+                <div class="row pb-3">
+                  <p>
+                    Có vẻ lạ !? Thử ngay để khám phá. Đây không phải giật tit.
+                  </p>
+                </div>
+                <div class="row">
+                  <div class="form-inline w-100">
+                    <h4 class="price mr-auto col-6 pl-0">105.000đ</h4>
+                    <a class="btn cart_button ml-auto rounded-pill col-3 p-2"
+                      ><i class="fas fa-shopping-basket"></i
+                    ></a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!--End-Card-->
+      </div>
+      <!-- parallax -->
+    </div>
+
+    <!-- FOOTER-BEGIN -->
+    <div class="container-fluid v_footer">
+      <div class="row">
+        <div
+          class="
+            col-12 col-sm-12 col-md-3 col-lg-3
+            cpl-xl-3
+            text-white
+            d-sm-none d-block
+          "
+        >
+          <p class="text-center">Kết nối trực tiếp với chúng tôi</p>
+          <input
+            type="email"
+            class="v_email"
+            placeholder="Điền email của bạn..."
+          />
+          <br />
+          <br />
+          <a href="#" class="v_sent">Chúng tôi lắng nghe bạn!</a
+          ><br /><br /><br /><br />
+        </div>
+
+        <div class="col-6 col-sm-6 col-md-3 col-lg-3 cpl-xl-3 text-white">
+          <p class="v_gotham">Tìm hiểu</p>
+          <a href="ngan/aboutus.html" class="v_footerlink d-sm-block d-none"
+            >Giới thiệu Fast&Delightful<br
+          /></a>
+          <a href="ngan/aboutus.html" class="v_footerlink d-sm-none d-block"
+            >Giới thiệu<br /><br />Fast&Delightful<br /><br
+          /></a>
+          <div class="d-sm-none d-block v_cucai"></div>
+          <a href="../thu/menu.html" class="v_footerlink">Thực đơn</a><br />
+          <div class="d-sm-none d-block v_cucai"></div>
+          <a href="../huy/khuyenmai.html" class="v_footerlink">Khuyến mãi</a
+          ><br />
+          <div class="d-sm-none d-block v_cucai"></div>
+          <a href="../thu/ho_tro.html" class="v_footerlink">Hỗ trợ</a><br />
+        </div>
+
+        <div class="col-6 col-sm-6 col-md-3 col-lg-3 cpl-xl-3 text-white">
+          <p class="v_gotham d-sm-block d-none">Cơ hội nghề nghiệp</p>
+          <p class="v_gotham d-sm-none d-block">Cơ hội<br />nghề nghiệp</p>
+          <a href="#" class="v_footerlink d-sm-block d-none"
+            >Thông tin tuyển dụng<br
+          /></a>
+          <a href="#" class="v_footerlink d-sm-none d-block"
+            >Thông tin<br /><br />tuyển dụng<br /><br
+          /></a>
+          <div class="d-sm-none d-block v_cucai"></div>
+          <a href="#" class="v_footerlink d-sm-block d-none"
+            >Đầu tư doanh nghiệp<br
+          /></a>
+          <div class="d-sm-none d-block v_caithao"></div>
+          <a href="#" class="v_footerlink d-sm-none d-block"
+            >Đầu tư<br /><br />doanh nghiệp<br /><br
+          /></a>
+          <div class="d-sm-none d-block v_cucai"></div>
+          <a href="#" class="v_footerlink">Khu vực TP.HCM</a><br />
+          <div class="d-sm-none d-block v_cucai"></div>
+          <a href="#" class="v_footerlink">Khu vực Hà Nội</a><br /><br />
+        </div>
+
+        <div class="col-6 col-sm-6 col-md-3 col-lg-3 cpl-xl-3 text-white">
+          <div class="d-sm-block d-none">
+            <p class="v_gotham">Chính sách và điều khoản</p>
+            <a href="ngan/faqs.html" class="v_footerlink"
+              >Một số câu hỏi thường gặp</a
+            ><br />
+            <a href="#" class="v_footerlink">Điều khoản và điều kiện</a><br />
+            <a href="#" class="v_footerlink">Chính sách về quyền riêng tư</a
+            ><br />
+            <a href="#" class="v_footerlink">Chính sách giải quyết khiếu nại</a
+            ><br />
+          </div>
+
+          <div class="d-sm-none d-block">
+            <p class="v_gotham v_batd">Chính sách và<br />điều khoản</p>
+            <a href="ngan/faqs.html" class="v_footerlink"
+              >Một số câu hỏi<br />thường gặp</a
+            ><br />
+            <div class="d-sm-none d-block v_cucai"></div>
+            <a href="#" class="v_footerlink">Điều khoản và<br />điều kiện</a
+            ><br />
+            <div class="d-sm-none d-block v_cucai"></div>
+            <a href="#" class="v_footerlink">Chính sách về quyền riêng tư</a
+            ><br />
+            <div class="d-sm-none d-block v_cucai"></div>
+            <a href="#" class="v_footerlink d-sm-block d-none"
+              >Chính sách giải quyết khiếu nại<br
+            /></a>
+            <div class="d-sm-none d-block v_caithao"></div>
+            <a href="#" class="v_footerlink d-sm-none d-block"
+              >Chính sách<br /><br />giải quyết<br /><br />khiếu nại<br /><br
+            /></a>
+          </div>
+        </div>
+
+        <div class="col-6 col-sm-6 col-md-3 col-lg-3 cpl-xl-3 text-white">
+          <p class="v_gotham v_batd d-sm-block d-none">Hình thức thanh toán</p>
+          <p class="v_gotham v_batd d-sm-none d-block">
+            Hình thức<br />thanh toán
+          </p>
+          <p>COD/Thanh toán khi nhận hàng</p>
+
+          <div class="row v_payment">
+            <div class="col-6 col-sm-6 col-md-3 col-lg-3 cpl-xl-3">
+              <img
+                src="img/mastercard.svg"
+                class="w-100 v_payment"
+              /><br /><br />
+            </div>
+
+            <div class="col-6 col-sm-6 col-md-3 col-lg-3 cpl-xl-3">
+              <img src="img/visacard.svg" class="w-100 v_payment" />
+            </div>
+
+            <div class="col-6 col-sm-6 col-md-3 col-lg-3 cpl-xl-3">
+              <img src="img/logo-momo.png" class="w-100 v_payment" />
+            </div>
+
+            <div class="col-6 col-sm-6 col-md-3 col-lg-3 cpl-xl-3">
+              <img src="img/zalo-pay.png" class="w-100 v_payment" />
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <br />
+
+      <div class="v_line d-sm-block d-none"></div>
+
+      <div class="d-sm-block d-none"><br /><br /></div>
+
+      <div class="row">
+        <div
+          class="col-12 col-sm-12 col-md-3 col-lg-3 cpl-xl-3 text-white v_ll"
+        >
+          <p>Liên lạc</p>
+          <p>
+            Hotline: 1900 0868<br />
+            (Miễn phí, 8h-21h từ thứ 2 đến thứ 6)<br />
+            Hotline: 1900 1269<br />
+            (1.000đồng/phút, 8h30-21h<span class="d-sm-none d-block"></span>thứ
+            7 và CN)
+          </p>
+        </div>
+
+        <div class="col-12 col-sm-12 col-md-6 col-lg-6 cpl-xl-6 text-white">
+          <br />
+          <p>
+            <span class="v_gotham">Địa chỉ 1:</span>&nbsp&nbsp&nbsp 223 Đ. Trần
+            Hưng Đạo, P.Cô Giang, Q.1, TP.HCM<br />
+            <span class="v_gotham">Địa chỉ 2:</span>&nbsp&nbsp&nbsp 53 Hồng Hà,
+            Phường 2, Tân Bình, TP.HCM Q.1, TP.HCM<br />
+            <span class="v_gotham">Địa chỉ 3:</span>&nbsp&nbsp&nbsp 744 Đ. La
+            Thành, Thành Công, Ba Đình, Hà Nội<br />
+            <span class="v_gotham">Địa chỉ 4:</span>&nbsp&nbsp&nbsp 41 Ngũ Hành
+            Sơn, Bắc Mỹ Phú, Ngũ Hành Sơn, Đà Nẵng
+          </p>
+        </div>
+
+        <div
+          class="
+            col-12 col-sm-12 col-md-3 col-lg-3
+            cpl-xl-3
+            text-white
+            d-sm-block d-none
+          "
+        >
+          <p>Kết nối trực tiếp với chúng tôi</p>
+          <input
+            type="email"
+            class="v_email"
+            placeholder="Điền email của bạn..."
+          />
+          <br /><br />
+          <a href="#" class="v_sent">Chúng tôi lắng nghe bạn!</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="v_copyright text-white d-sm-block d-none">
+      <p class="v_copyleft m-0">
+        ©2017-2018 Fast&Delightful. All Rights Reserved.
+      </p>
+    </div>
+
+    <div class="v_copyright text-white d-sm-none d-block">
+      <p class="v_copyleft m-0">
+        ©2017-2018 Fast&Delightful. All Rights Reserved.
+      </p>
+    </div>
+
+    <!-- FOOTER-END -->
+
+    <script type="text/javascript" src="js/jquery.min.js"></script>
+    <script type="text/javascript" src="js/popper.js"></script>
+    <script type="text/javascript" src="js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="slick/slick.min.js"></script>
+    <script type="text/javascript" src="js/custom.js"></script>
+  </body>
+</html>

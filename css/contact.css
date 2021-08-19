@@ -1,0 +1,142 @@
+body{
+    background-image: url('../img/Artboard\ 1.jpg');
+    background-size: cover;
+    background-position-y: bottom;
+    background-attachment: fixed;
+    color: white;
+    padding: 0;
+    margin: 0;
+    
+    
+}
+.mytitle{
+    font-family: svn-gotham black;
+    
+}
+.fas{
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 0.4rem;
+    box-shadow: 1rem 1rem 1rem rgba(0,0, 0, 0.5);
+    border-top: 1px solid rgba(255, 255, 255, 0.5);
+    border-left: 1px solid rgba(255, 255, 255, 0.5);
+    backdrop-filter: blur(5px);
+    padding: 0.5rem;
+    cursor: pointer;
+    z-index: 1000;
+}
+.toggle{
+    background-color: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(8px);
+    width: 0;
+    height: 0;
+    position: absolute;
+    top: 0;
+    right: 0;
+    z-index: 5;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    transition: 1s;
+    opacity: 0;
+}
+.hide{
+    width: 0;
+    height: 0;
+    transition: 1s;
+}
+.toggle ul{
+ list-style-type: none;
+}
+.overlay{
+    height: 100vh;
+    width: 100vw;
+    transition: 1s;
+    opacity: 1;
+}
+li a{
+    color: white;
+    position: relative;
+}
+li a:hover{
+    text-decoration: none;
+    color: white;
+}
+li a::before{
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 30%;
+    background-color: palevioletred;
+    z-index: -1;
+    transform: translateY(200%);
+    transition: .2s;
+
+}
+li a:hover::before{
+    width: 100%;
+}
+ul li .span1{
+    height: 50px;
+    width: 50px;
+    color: palevioletred;
+    background-color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    cursor: pointer;
+    
+}
+ul li .span1:hover{
+    background-color: palevioletred;
+    color: white;
+    transition: 0.5s;
+}
+h1, h2, h3, h4{
+    font-family: svn-gotham black;
+}
+#backtotop{
+	position: fixed;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	font-size: 2em;
+	color: black;
+    background-color: transparent;
+	bottom: 1em;
+	width: 1,2em;
+	height: 1,2em;
+	right: 1em;
+	padding :3px;
+    border: none;
+}
+/*end copy*/
+.my_body{
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 1rem;
+    box-shadow: 1rem 1rem 1rem rgba(0,0, 0, 0.5);
+    border-top: 1px solid rgba(255, 255, 255, 0.5);
+    backdrop-filter: blur(5px);
+    border-left: 1px solid rgba(255, 255, 255, 0.5);
+    ;
+}
+
+@media screen and (max-width: 480px){
+    h1, h2, h3, .h1, .h2, .h3{
+        font-size: 20px !important;
+    }
+    .my_body{
+        flex-direction: column;
+    }
+   .p-5{
+       padding: 1rem !important;
+   }
+   .fab{
+       font-size: 40px !important;
+   }
+}

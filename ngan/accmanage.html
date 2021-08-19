@@ -1,0 +1,1086 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Quản lí tài khoản</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" type="text/css" href="css/bootstrap.css">
+	<link rel="stylesheet" type="text/css" href="slick/slick.css">
+    <link rel="stylesheet" type="text/css" href="slick/slick-theme.css">
+	<!-- <script type="text/javascript" src="js/jquery.min.js"></script> -->
+	
+	<link rel="stylesheet" type="text/css" href="css/all.css">
+	<link rel="stylesheet" type="text/css" href="fontawesome/css/all.min.css">
+	<!-- <script type="text/javascript" src="js/all.js"></script> -->
+	<link rel="stylesheet" type="text/css" href="css/accmanage.css">
+	
+</head>
+<body>
+
+ <!-- Menu lăn xuống hiện ra -->
+ <div class="d-none d-sm-block">
+	<nav class="navbar navbar-expand-lg bg-dark scrollingnav">
+	  <a class="navbar-brand d-none d-lg-block ml-3" href="#"
+		><img src="img/logo-nav-02.svg" class="logo_nav_2 p-1" width="80%"
+	  /></a>
+	  <div class="collapse navbar-collapse menu" id="mynavbar">
+		<ul class="navbar-nav mr-auto t">
+		  <li class="nav-item active">
+			<a class="nav-link text-light" href="../thang/home.html"
+			  >Trang chủ
+			</a>
+		  </li>
+		  <li class="nav-item dropdown">
+			<a
+			  class="nav-link dropdown-toggle text-light"
+			  href="../thu/menu.html"
+			  id="navbarDropdown"
+			  role="button"
+			  data-toggle="dropdown"
+			  aria-haspopup="true"
+			  aria-expanded="false"
+			>
+			  Thực đơn
+			</a>
+			<div class="dropdown-menu" aria-labelledby="navbarDropdown">
+			  <a class="dropdown-item" href="../thang/garan.html">Gà rán</a>
+			  <a class="dropdown-item" href="burgers.html">Bánh burgers</a>
+			  <a class="dropdown-item" href="../thu/com.html">Cơm</a>
+			  <a class="dropdown-item" href="../huy/combo.html">Combo</a>
+			  <a class="dropdown-item" href="../thu/do_uong.html"
+				>Nước uống/Tráng miệng</a
+			  >
+			</div>
+		  </li>
+		  <li class="nav-item">
+			<a class="nav-link text-light" href="../huy/khuyenmai.html"
+			  >Khuyến mãi</a
+			>
+		  </li>
+		  <li class="nav-item">
+			<a class="nav-link text-light" href="aboutus.html"
+			  >Về chúng tôi</a
+			>
+		  </li>
+		  <li class="nav-item">
+			<a class="nav-link text-light" href="../huy/lienhe.html">Liên hệ</a>
+		  </li>
+		  <li class="nav-item dropdown">
+			<a
+			  class="nav-link dropdown-toggle text-light"
+			  href="../thu/ho_tro.html"
+			  id="navbarDropdown"
+			  role="button"
+			  data-toggle="dropdown"
+			  aria-haspopup="true"
+			  aria-expanded="false"
+			>
+			  Hỗ trợ
+			</a>
+			<div class="dropdown-menu" aria-labelledby="navbarDropdown">
+			  <a class="dropdown-item" href="faqs.html">Câu hỏi thường gặp</a>
+			</div>
+		  </li>
+		</ul>
+	  </div>
+	  <!-- Giỏ hàng đăng nhập desktop -->
+	  <div class="ml-auto icon d-none d-lg-block">
+		<button
+		  class="myicon bg-transparent border-0"
+		  data-toggle="modal"
+		  data-target="#cart"
+		>
+		  <i class="fas fa-shopping-basket text-light h2"></i>
+		</button>
+		<!-- Cart modal -->
+		<div
+		  class="gio_hang modal fade"
+		  id="cart"
+		  tabindex="1"
+		  aria-labelledby="mymodal"
+		  aria-hidden="true"
+		>
+		  <div class="modal-dialog modal-lg">
+			<div class="modal-content">
+			  <div class="modal-header red_bg">
+				<div class="col-1"></div>
+				<h5
+				  class="modal-title col-10 text-center text-light"
+				  id="mymodal"
+				>
+				  Giỏ hàng
+				</h5>
+				<button
+				  type="button"
+				  class="close col-1"
+				  data-dismiss="modal"
+				  aria-label="close"
+				>
+				  <span aria-hidden="true">&times;</span>
+				</button>
+			  </div>
+			  <div class="modal-body p-0 yl_bg">
+				<table class="table_cart" id="tablecart">
+				  <thead class="w-100">
+					<th class="p-3">Đơn hàng của bạn</th>
+					<th></th>
+					<th></th>
+
+					<th colspan="2" class="p-3 text-right">
+					  <button
+						id="deleteall"
+						class="border-0 bg-transparent text-white"
+					  >
+						Xóa hết
+					  </button>
+					</th>
+				  </thead>
+				  <tbody class="w-100">
+					<tr id="dishcart_01">
+					  <td class="w-25 p-3">
+						<img src="img/dishes/dish_01.png" width="100%" />
+					  </td>
+					  <td class="p-3 w-25">Bánh burger bò</td>
+					  <td class="p-3 w-25">
+						<div class="quantity h4">
+						  <button class="Subtract">-</button>
+						  <input
+							class="quantity_input"
+							type="number"
+							min="0"
+							value="0"
+						  />
+						  <button class="Add">+</button>
+						</div>
+					  </td>
+					  <td class="p-3">49.000đ</td>
+					  <td>
+						<button
+						  class="border-0 bg-transparent p-2"
+						  id="delete_01"
+						>
+						  <i class="fas fa-trash-alt"></i>
+						</button>
+					  </td>
+					</tr>
+					<tr id="dishcart_02">
+					  <td class="w-25 p-3">
+						<img src="img/dishes/dish_02.png" width="100%" />
+					  </td>
+					  <td class="p-3 w-25">Bánh burger cá</td>
+					  <td class="p-3 w-25">
+						<div class="quantity h4">
+						  <button class="Subtract">-</button>
+						  <input
+							class="quantity_input"
+							type="number"
+							min="0"
+							value="0"
+						  />
+						  <button class="Add">+</button>
+						</div>
+					  </td>
+					  <td class="p-3">59.000đ</td>
+					  <td>
+						<button
+						  class="border-0 bg-transparent p-2"
+						  id="delete_02"
+						>
+						  <i class="fas fa-trash-alt"></i>
+						</button>
+					  </td>
+					</tr>
+					<tr>
+					  <th
+						class="p-0 px-5 pb-5 text-light text-left"
+						colspan="3"
+					  >
+						Tổng cộng
+					  </th>
+
+					  <th
+						class="
+						  p-0
+						  pr-5
+						  pl-3
+						  pb-5
+						  total_cart
+						  text-light text-left
+						"
+						colspan="2"
+					  >
+						108.000đ
+					  </th>
+					</tr>
+				  </tbody>
+				  <tr class="red_bg">
+					<td colspan="5" class="text-right pt-4 pr-4 pb-3">
+					  <a href="../thang/gio_hang.html"
+						><div class="rounded-lg p-3 text-center button00">
+						  Tiến hành thanh toán
+						</div></a
+					  >
+					</td>
+				  </tr>
+				</table>
+				<p id="nothing" class="text-center py-3">
+				  Giỏ hàng của bạn chưa có gì
+				</p>
+			  </div>
+			</div>
+		  </div>
+		</div>
+		<a href="accmanage.html" class="myicon">
+		  <i class="fas fa-user text-light h2 ml-3"></i
+		></a>
+	  </div>
+	</nav>
+  </div>
+  <div class="side_click">
+	<div class="toggle_class shadow-lg border-right-0 rounded-left d-flex">
+	  <i class="fas fa-chevron-left h5 m-auto text-light"></i>
+	</div>
+	<div class="grr">
+	  <div
+		class="
+		  side
+		  shadow-lg
+		  border-right-0
+		  p-2
+		  rounded-left
+		  round-lg
+		  d-inline-block
+		"
+	  >
+		<button id="backtotop" class="d-block side_button">
+		  <i class="fas fa-arrow-up h4 text-light"></i>
+		</button>
+		<a href="#" class="d-block mt-1 ml-2"
+		  ><i class="fab fa-facebook-f h4 text-light"></i
+		></a>
+		<a href="#" class="d-block mt-1 ml-2"
+		  ><i class="fab fa-instagram h4 text-light"></i
+		></a>
+	  </div>
+	</div>
+  </div>
+  <!--nav 1440-->
+  <div class="bg_nav_big d-none d-xl-block">
+	<nav class="navbar navbar-expand-lg py-0 nav_1">
+	  <div class="container container_pad py-3">
+		<p class="pl-3">Hotline đặt hàng: 01236908375</p>
+		<p class="pr-3">
+		  Giao hàng đến &nbsp; <span class="fontspan">HCM</span>&nbsp;&nbsp;<a
+			href="accmanage.html"
+			class="nav_item"
+			>Thay đổi</a
+		  >
+		</p>
+	  </div>
+	</nav>
+	<nav class="navbar navbar-expand-lg nav_1">
+	  <div class="container nav_fix1 container_pad">
+		<div class="border_nav mr-auto p-3">
+		  <a href="../thang/home.html" class="nav_item1 fontspan">Trang chủ</a>
+		  <a href="../thu/menu.html" class="nav_item1 fontspan">Thực đơn</a>
+		  <a href="../huy/khuyenmai.html" class="nav_item1 fontspan"
+			>Khuyến mãi</a
+		  >
+		</div>
+		<a href="../thang/home.html" class="navbar-brand m-auto"
+		  ><img src="img/logo.png" class="logo_png"
+		/></a>
+		<div class="border_nav ml-auto p-3">
+		  <a href="aboutus.html" class="nav_item2 fontspan">Về chúng tôi</a>
+		  <a href="../huy/lienhe.html" class="nav_item2 fontspan">Liên hệ</a>
+		  <a href="../thu/ho_tro.html" class="nav_item2 fontspan">Hỗ trợ</a>
+		</div>
+	  </div>
+	</nav>
+  </div>
+  <!--end nav 1440-->
+  <!--Nav 320-->
+  <div class="bg_nav d-sm-none d-block w-100">
+	<nav class="navbar navbar-expand-sm">
+	  <button
+		class="navbar-toggler mr-auto"
+		type="button"
+		data-toggle="collapse"
+		data-target="#top_nav2"
+		style="color: white"
+	  >
+		<i class="fas fa-bars"></i>
+	  </button>
+	  <a href="../thang/home.html" class="navbar-brand logo_320 m-auto"
+		><img src="img/logo.png"
+	  /></a>
+	  <div class="ml-auto form-inline">
+		<a
+		  data-toggle="modal"
+		  data-target="#gio_modal"
+		  class="nav-link text-light icon"
+		  ><i class="fas fa-shopping-basket"></i
+		></a>
+		<a href="accmanage.html" class="nav-link icon"
+		  ><i class="fas fa-user"></i
+		></a>
+	  </div>
+
+	  <div id="top_nav2" class="collapse navbar-collapse">
+		<ul class="navbar-nav drop">
+		  <li class="nav-item ml-3">
+			<a href="../thang/home.html" class="nav_item fontspan">Trang chủ</a>
+		  </li>
+		  <li class="nav-item ml-3 dropdown">
+			<a
+			  class="fontspan nav-link dropdown-toggle text-light"
+			  href="../thu/menu.html"
+			  id="navbarDropdown"
+			  role="button"
+			  data-toggle="dropdown"
+			  aria-haspopup="true"
+			  aria-expanded="false"
+			>
+			  Thực đơn
+			</a>
+			<div
+			  class="dropdown-menu drop_menu_320 px-0 pb-2"
+			  aria-labelledby="navbarDropdown"
+			>
+			  <a class="pl-2 dropdown-item" href="../thang/garan.html">Gà rán</a>
+			  <a class="pl-2 dropdown-item" href="burgers.html"
+				>Bánh burgers</a
+			  >
+			  <a class="pl-2 dropdown-item" href="../thu/com.html">Cơm</a>
+			  <a class="pl-2 dropdown-item" href="../huy/combo.html">Combo</a>
+			  <a class="pl-2 dropdown-item" href="../thu/do_uong.html"
+				>Nước uống/Tráng miệng</a
+			  >
+			</div>
+		  </li>
+
+		  <li class="nav-item ml-3">
+			<a href="../huy/khuyenmai.html" class="nav_item fontspan"
+			  >Khuyến mãi</a
+			>
+		  </li>
+		  <li class="nav-item ml-3">
+			<a href="aboutus.html" class="nav_item fontspan">Về chúng tôi</a>
+		  </li>
+		  <li class="nav-item ml-3">
+			<a href="../huy/lienhe.html" class="nav_item fontspan">Liên hệ</a>
+		  </li>
+		  <li class="nav-item ml-3 dropdown">
+			<a
+			  class="fontspan nav-link dropdown-toggle text-light"
+			  href="../thu/ho_tro.html"
+			  id="navbarDropdown"
+			  role="button"
+			  data-toggle="dropdown"
+			  aria-haspopup="true"
+			  aria-expanded="false"
+			>
+			  Hỗ trợ
+			</a>
+			<div
+			  class="dropdown-menu drop_menu_320 px-0 pb-2"
+			  aria-labelledby="navbarDropdown"
+			>
+			  <a class="pl-2 dropdown-item" href="faqs.html"
+				>Câu hỏi thường gặp</a
+			  >
+			</div>
+		  </li>
+		</ul>
+	  </div>
+	</nav>
+  </div>
+  <!-- Giỏ hàng đăng nhập mobile -->
+  <div class="modal fade" id="gio_modal">
+	<div class="modal-dialog modal-sm">
+	  <div class="modal-content">
+		<!--Header-->
+		<div class="modal-header red_bg py-3">
+		  <div class="col-1"></div>
+		  <h4 class="fontspan text-light col-10 m-auto text-center">
+			Giỏ hàng
+		  </h4>
+		  <button
+			class="close col-1 text-light"
+			type="button"
+			data-dismiss="modal"
+		  >
+			&times;
+		  </button>
+		</div>
+
+		<!--Body-->
+		<div class="modal-body yl_bg">
+		  <table class="table_cart" id="tablecart">
+			<tbody class="w-100">
+			  <tr id="dishcart_03" class="">
+				<td class="col-4 p-1">
+				  <img src="img/dishes/dish_01.png" width="100%" />
+				</td>
+				<td class="col-5 p-1">Bánh burger bò</td>
+				<td class="col-3 p-1">
+				  <div class="quantity h6 m-0">
+					<button class="Subtract">-</button>
+					<input
+					  class="quantity_input"
+					  type="number"
+					  min="1"
+					  value="1"
+					/>
+					<button class="Add">+</button>
+				  </div>
+				</td>
+			  </tr>
+			  <tr id="dishcart_031">
+				<td class="p-3 text-light" colspan="2">49.000đ</td>
+				<td class="text-right pr-3">
+				  <button
+					class="ml-auto border-0 bg-transparent p-2"
+					id="delete_03"
+				  >
+					<i class="fas fa-trash-alt"></i>
+				  </button>
+				</td>
+			  </tr>
+			  <tr id="dishcart_04">
+				<td class="col-4 p-1">
+				  <img src="img/dishes/dish_02.png" width="100%" />
+				</td>
+				<td class="col-5 p-1">Bánh burger cá</td>
+				<td class="col-3 p-1">
+				  <div class="quantity h6 m-0">
+					<button class="Subtract">-</button>
+					<input
+					  class="quantity_input"
+					  type="number"
+					  min="1"
+					  value="1"
+					/>
+					<button class="Add">+</button>
+				  </div>
+				</td>
+			  </tr>
+			  <tr id="dishcart_041">
+				<td class="p-3 text-light" colspan="2">59.000đ</td>
+				<td class="text-right pr-3">
+				  <button class="border-0 bg-transparent p-2" id="delete_04">
+					<i class="fas fa-trash-alt"></i>
+				  </button>
+				</td>
+			  </tr>
+			</tbody>
+		  </table>
+		</div>
+		<!--Footer-->
+		<div class="modal-footer red_bg py-3">
+		  <a href="../thang/gio_hang.html" class="btn_1 w-75 m-auto text-center"
+			>Tiến hành đặt hàng</a
+		  >
+		</div>
+	  </div>
+	</div>
+  </div>
+<!-- body -->
+
+<div class="container">
+	<nav aria-label="breadcrumb" class="bg_breadcrumb">
+		<ol class="breadcrumb bg-transparent pl-0 ml-0">
+		  <li class="breadcrumb-item"><a href="#" class="text-secondary">Trang chủ</a></li>
+		  <li class="breadcrumb-item active text-dark" aria-current="page">Quản lí tài khoản</li>
+		</ol>
+	</nav>
+	<div class="my_profile d-flex flex-column p-4">
+		<div class="square rounded-circle overflow-hidden mx-auto position-relative my-auto" ><input type="file" id="my_avatar" style="display: none;"></input><img src="img/cat_3.jpg" height="120%"><label for="my_avatar" style="cursor: pointer;"><div class="overlay position-absolute d-flex justify-content-center align-items-center"><i class="fas fa-camera h2 text-light"></i></div></label></div>
+		<h3 class="myfont mx-auto text-light">Fix-satisfaction2970<button class="btn"><i class="fas fa-edit text-light"></i></button></h3>
+	</div>
+	<nav>
+		<div class="nav-tabs d-flex justify-content-between nav" id="mytabs" role="tablist" style="font-family: svn-gotham black;">
+		  <a class="nav-link text-light active" id="nav_01" data-toggle="tab" href="#nav-dathang" role="tab"><div class="ml-3">Đặt hàng</div></a>
+		  <a class="nav-link text-light" id="nav_02" data-toggle="tab" href="#nav-yeuthich"><div class="ml-3">Yêu thích</div></a>
+		  <a class="nav-link text-light" id="nav_03" data-toggle="tab" href="#nav-thanhtoan" role="tab"><div class="ml-3">Thanh toán</div></a>
+		  <a class="nav-link text-light" id="nav_04" data-toggle="tab" href="#nav-coupon" role="tab"><div class="ml-3">Mã ưu đãi</div></a>
+		  <a class="nav-link text-light" id="nav_05" data-toggle="tab" href="#nav-address" role="tab"><div class="ml-3">Địa chỉ</div></a>
+		  <a class="nav-link text-light" id="nav_06" data-toggle="tab" href="#nav-support" role="tab" ><div class="ml-3">Tài khoản</div></a>
+		</div>
+	  </nav>
+	  <div class="tab-content mt-5" id="nav-tabContent">
+		<div class="tab-pane fade show active" id="nav-dathang" role="tabpanel">
+			<div>
+				<div class="row">
+					<div class="col-xl-3 xol-12 noname">
+						<div id="shipping_tabs" class=" nav flex-column "  role="tablist"  style="font-family: svn-gotham black;">
+								<a class="nav-link text-secondary active " id="v-pills-home-tab" data-toggle="pill" href="#danggiao" role="tab" aria-controls="v-pills-home" aria-selected="true">Đang giao</a>
+								<a class="nav-link text-secondary" id="v-pills-profile-tab" data-toggle="pill" href="#dagiao" role="tab" aria-controls="v-pills-profile" aria-selected="false">Đã giao</a>
+								<a class="nav-link text-secondary" id="v-pills-messages-tab" data-toggle="pill" href="#dahuy" role="tab" aria-controls="v-pills-messages" aria-selected="false">Đã hủy</a>
+						</div>
+					</div>
+						
+					<div class="col-12 col-lg-9 p-3">
+						  <div class="tab-content" id="v-pills-tabContent">
+							<div class="tab-pane fade show active" id="danggiao" role="tabpanel" aria-labelledby="v-pills-home-tab">
+								<p>Bạn hiện có 1 đơn hàng đang trên đường tới</p>
+								
+								<table class="tb_danggiao rounded">
+									<thead><tr class="p-3"><th class="p-3 myfont text-right" colspan="3">Đang giao</th></tr></thead>
+									<tbody>
+										<tr class="p-3">
+											<td class="w-25 p-3"><img src="img/fried_chicken.png" width="100%"></td>
+											<td class="w-50 p-3"><p>Gà rán chua ngọt</p>x1</td>
+											<td class="w-25 p-3 text-right myfont">40.000đ</td>
+										</tr>
+										</tbody>
+										
+											<tr class="p-3 hiding">
+												<td class="w-25 p-3"><img src="img/carbonara.png" width="100%"></td>
+												<td class="w-50 p-3"><p>Mỳ ý kem nấm</p>x1</td>
+												<td class="w-25 p-3 text-right myfont">35.000đ</td>
+											</tr>
+											<tr class="p-3 hiding">
+												<td class="w-25 p-3"><img src="img/eggtart.png" width="100%"></td>
+												<td class="w-50 p-3"><p>Bánh trứng</p>x1</td>
+												<td class="w-25 p-3 text-right myfont">25.000đ</td>
+											</tr>
+											<tr class="p-3 hiding">
+												<td class="p-3 text-right" colspan="3">Địa chỉ : 126 Nguyễn Bỉnh Khiêm, Quận 1, TPHCM<br>SĐT : 01689324</td>
+											</tr>
+										
+										<tfoot class="border-top border-dark">
+											<tr class="p-3 ">
+												<td class="other_dish p-3"><p>3 món khác</p></td>
+												
+												<td class=" p-3 text-right myfont ml-auto" colspan="2">Thành tiền : 100.000đ</td>
+											</tr>
+											<tr class="p-3">
+												<td class="p-3 text-right" colspan="3"><button class="more_detail btn">Xem chi tiết</button></td>
+											</tr>
+										</tfoot>
+									</tbody>
+								</table>
+							</div>
+							<div class="tab-pane fade" id="dagiao" role="tabpanel" aria-labelledby="v-pills-profile-tab">
+								<p>28/4/2021</p>
+								<table class="tb_danggiao rounded">
+									<thead><tr class="p-3"><th class="p-3 myfont text-right" colspan="3">Đã giao thành công</th></tr></thead>
+									<tbody>
+										<tr class="p-3">
+											<td class="w-25 p-3"><img src="img/fried_chicken.png" width="100%"></td>
+											<td class="w-50 p-3"><p>Gà rán chua ngọt</p>x1</td>
+											<td class="w-25 p-3 text-right myfont">40.000đ</td>
+										</tr>
+										</tbody>
+										
+											<tr class="p-3 hiding">
+												<td class="w-25 p-3"><img src="img/carbonara.png" width="100%"></td>
+												<td class="w-50 p-3"><p>Mỳ ý kem nấm</p>x1</td>
+												<td class="w-25 p-3 text-right myfont">35.000đ</td>
+											</tr>
+											<tr class="p-3 hiding">
+												<td class="w-25 p-3"><img src="img/eggtart.png" width="100%"></td>
+												<td class="w-50 p-3"><p>Bánh trứng</p>x1</td>
+												<td class="w-25 p-3 text-right myfont">25.000đ</td>
+											</tr>
+											<tr class="p-3 hiding">
+												<td class="p-3 text-right" colspan="3">Địa chỉ : 126 Nguyễn Bỉnh Khiêm, Quận 1, TPHCM<br>SĐT : 01689324</td>
+											</tr>
+										
+										<tfoot class="border-top border-dark">
+											<tr class="p-3 ">
+												<td class="other_dish p-3"><p>3 món khác</p></td>
+												
+												<td class=" p-3 text-right myfont ml-auto" colspan="2">Thành tiền : 100.000đ</td>
+											</tr>
+											<tr class="p-3">
+												<td class="p-3 text-right" colspan="3"><button class="more_detail btn">Xem chi tiết</button></td>
+											</tr>
+										</tfoot>
+									</tbody>
+								</table>
+							</div>
+							<div class="tab-pane fade" id="v-pills-messages" role="tabpanel" aria-labelledby="v-pills-messages-tab">...</div>
+							<div class="tab-pane fade" id="dahuy" role="tabpanel" aria-labelledby="v-pills-settings-tab">
+								<p>24/07/2021</p>
+								<table class="tb_danggiao rounded">
+									<thead><tr class="p-3"><th class="p-3 myfont text-right" colspan="3">Đã hủy</th></tr></thead>
+									<tbody>
+										<tr class="p-3">
+											<td class="w-25 p-3"><img src="img/fried_chicken.png" width="100%"></td>
+											<td class="w-50 p-3"><p>Gà rán chua ngọt</p>x1</td>
+											<td class="w-25 p-3 text-right myfont">40.000đ</td>
+										</tr>
+										</tbody>
+										
+											<tr class="p-3 hiding">
+												<td class="w-25 p-3"><img src="img/carbonara.png" width="100%"></td>
+												<td class="w-50 p-3"><p>Mỳ ý kem nấm</p>x1</td>
+												<td class="w-25 p-3 text-right myfont">35.000đ</td>
+											</tr>
+											<tr class="p-3 hiding">
+												<td class="w-25 p-3"><img src="img/eggtart.png" width="100%"></td>
+												<td class="w-50 p-3"><p>Bánh trứng</p>x1</td>
+												<td class="w-25 p-3 text-right myfont">25.000đ</td>
+											</tr>
+											<tr class="p-3 hiding">
+												<td class="p-3 text-right" colspan="3">Địa chỉ : 126 Nguyễn Bỉnh Khiêm, Quận 1, TPHCM<br>SĐT : 01689324</td>
+											</tr>
+										
+										<tfoot class="border-top border-dark">
+											<tr class="p-3 ">
+												<td class="other_dish p-3"><p>3 món khác</p></td>
+												
+												<td class=" p-3 text-right myfont ml-auto" colspan="2">Thành tiền : 100.000đ</td>
+											</tr>
+											<tr class="p-3">
+												<td class="p-3 text-right" colspan="3"><button class="more_detail btn">Xem chi tiết</button></td>
+											</tr>
+										</tfoot>
+									</tbody>
+								</table>
+							</div>
+						  </div>
+						</div>
+					</div>
+				</div>
+				
+				</div>
+			
+		
+		<div class="tab-pane fade" id="nav-yeuthich" role="tabpanel">
+			<div class="col-12 col-xl-6  mx-auto">
+				<div>
+					<div class="d-flex w-100 align-items-center first_row fav_item">
+						<div class="unlike p-3"><i class="fas fa-heart h4"></i></div>
+						<div class="p-3" style="cursor: pointer;"><i class="fas fa-shopping-basket h4"></i></div>
+						<div class="w-25 p-3"><img src="img/eggtart.png" width="100%"></div>
+						<p class="p-3">Bánh trứng</p>
+						<p class="myfont ml-auto p-3">35.000đ</p>
+					</div>
+					<div class="d-flex w-100 align-items-center second_row fav_item">
+						<div class="unlike p-3"><i class="fas fa-heart h4"></i></div>
+						<div class=" p-3" style="cursor: pointer;"><i class="fas fa-shopping-basket h4"></i></div>
+						<div class="w-25 p-3"><img src="img/fried_chicken.png" width="100%"></div>
+						<p class="p-3">Gà rán</p>
+						<p class="myfont ml-auto p-3">55.000đ</p>
+					</div>
+					<div class="d-flex w-100 align-items-center first_row fav_item">
+						<div class="unlike p-3"><i class="fas fa-heart h4"></i></div>
+						<div class=" p-3" style="cursor: pointer;"><i class="fas fa-shopping-basket h4"></i></div>
+						<div class="w-25 p-3"><img src="img/carbonara.png" width="100%"></div>
+						<p class=" p-3">Mỳ ý</p>
+						<p class="myfont ml-auto p-3">65.000đ</p>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="tab-pane fade" id="nav-thanhtoan" role="tabpanel">
+			<div class="col-12 col-xl-8 mx-auto">
+				<h4 class="myfont red_color">Thẻ tín dụng/ghi nợ :</h4>
+				<div class="w-100">
+					<div class="accordion" id="bank">
+						<div class="card bg_orange w-100">
+							<div class="card_bank card-header d-flex justify-content-between" id="headingOne">
+							<div style="width: 10%;"><img src="img/cc-visa.svg" width="100%"></div>
+							<p class="align-self-center mr-auto ml-3">BANK FOREIGN TRADE OF VIETNAM</p>
+							<button class="btn border-0 text-right d-inline-block click_acc" type="button" data-toggle="collapse" data-target="#collapseOne">
+								<i class="fas fa-caret-left"></i>
+							</button>
+							
+							</div>
+			
+							<div id="collapseOne" class="collapse " aria-labelledby="headingOne" >
+							<div class="card-body w-100">
+								<p> Credit card type : VISA</p>
+								<p> Mã số thẻ tín dụng : 4541*****1455</p>
+								<button class="btn text-danger d-flex ml-auto remove_this">Xóa</button>
+							</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="w-100 mt-3">
+					<div class="accordion" id="bank">
+						<div class="card bg_orange w-100">
+							<div class="card_bank card-header d-flex justify-content-between" id="heading_02">
+							<div style="width: 10%;"><img src="img/cc-mastercard.svg" width="100%"></div>
+							<p class="align-self-center mr-auto ml-3">BANK FOREIGN TRADE OF VIETNAM</p>
+							<button class="btn border-0 text-right d-inline-block click_acc" type="button" data-toggle="collapse" data-target="#collapse_02">
+								<i class="fas fa-caret-left"></i>
+							</button>
+							
+							</div>
+			
+							<div id="collapse_02" class="collapse" aria-labelledby="heading_02">
+							<div class="card-body w-100">
+								<p> Credit card type : MASTERCARD</p>
+								<p> Mã số thẻ tín dụng : 4541*****1455</p>
+								<button class="btn text-danger d-flex ml-auto remove_this">Xóa</button>
+							</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="mt-3">
+					<div class="bg_red">
+						<div class="d-flex p-3 ">
+							<button class=" btn bg-white border-1"><i class="fas fa-plus"></i></button>
+							<p class="text-light ml-3 my-auto">Thêm thẻ mới</p>
+						</div>
+					</div>
+				</div>
+				<h4 class="mt-3 myfont red_color">Tài khoản ngân hàng :</h4>
+				<div class="w-100">
+					<div class="accordion" id="bank">
+						<div class="card bg_orange w-100">
+							<div class="card_bank card-header d-flex justify-content-between" id="heading_03">
+							<div style="width: 10%;" class="rounded overflow-hidden"><img src="img/vietcombank.png" width="100%"></div>
+							<p class="align-self-center mr-auto ml-3">VCB - NH TMCP Ngoai Thuong Viet Nam</p>
+							<button class="btn border-0 text-right d-inline-block click_acc" type="button" data-toggle="collapse" data-target="#collapse_03">
+								<i class="fas fa-caret-left"></i>
+							</button>
+							
+							</div>
+			
+							<div id="collapse_03" class="collapse " aria-labelledby="heading_03">
+							<div class="card-body w-100">
+								<p> Số tài khoản : 454141455</p>
+								<button class="btn text-danger d-flex ml-auto  remove_this">Xóa</button>
+							</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="mt-3">
+					<div class="bg_red">
+						<div class="d-flex p-3 ">
+							<button class=" btn bg-white border-1"><i class="fas fa-plus"></i></button>
+							<p class="text-light ml-3 my-auto">Thêm tài khoản ngân hàng</p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="tab-pane fade" id="nav-coupon" role="tabpanel">
+			<div class="col-12 col-xl-8 d-flex mx-auto">
+				
+					<div class="d-flex w-100">
+						<div class="bg_orange d-flex p-3 w-75 coupon_01">
+							<div class="bg-white w-25 rounded d-none d-xl-block"><img src="img/ship_coupon.png" width="100%"></div>
+							<p class="ml-3 align-self-center">Giảm 25k phí giao hàng <br> Hạn sử dụng : 29/02/2021</p>
+						</div>
+						<div class="bg_orange d-flex w-25 coupon_02">
+							<a href="../thang/gio_hang.html" class="red_color myfont align-self-center mx-auto text-decoration-none  sudung"><p>Sử dụng ngay</p></a>
+						</div>
+					</div>
+				
+			</div>
+			<div class="col-12 col-xl-8 d-flex mx-auto mt-3">
+				
+					<div class="d-flex w-100">
+						<div class="bg_orange d-flex p-3 w-75 coupon_01">
+							<div class="d-none d-xl-block w-25"><img src="img/cc-visa.svg" width="100%"></div>
+							<p class="ml-3 align-self-center">Giảm 10% khi thanh toán bằng thẻ visa <br> Hạn sử dụng : 29/02/2021</p>
+						</div>
+						<div class="bg_orange d-flex w-25 coupon_02">
+							<a href="../thang/gio_hang.html" class="red_color myfont align-self-center mx-auto text-decoration-none sudung"><p>Sử dụng ngay</p></a>
+						</div>
+					</div>
+				
+			</div>
+		</div>
+		<div class="tab-pane fade" id="nav-address" role="tabpanel">
+			<div class="col-12 col-xl-8 mx-auto">
+				<div class="w-100">
+					<div class="accordion">
+						<div class="card bg_orange w-100">
+							<div class="card_bank card-header d-flex justify-content-between align-items-center" id="heading_05">
+							<h5 class="my-auto mr-auto ml-3">Nhà</h5>
+							<button class="btn border-0 text-right d-inline-block click_acc" type="button" data-toggle="collapse" data-target="#collapse_05">
+								<i class="fas fa-caret-left"></i>
+							</button>
+							
+							</div>
+			
+							<div id="collapse_05" class="collapse show" aria-labelledby="heading_05">
+							<div class="card-body w-100">
+								<div class="my_address p-2">
+									<p>275 Nguyễn Văn Đậu, phường Bình Thạnh, TPHCM</p>
+								</div>
+								<div class="d-flex justify-content-end mt-2">
+									<button class="btn btn-secondary editbtn">
+										Xác nhận
+									</button>
+								</div>
+								<div class="d-flex justify-content-end">
+									<p class="my-auto">Mặc định</p>
+									<input type="checkbox" checked class="my-auto">
+								</div>
+								<div class="d-flex justify-content-end">
+									<button class="btn text-danger edit_this">Sửa</button>
+									<button class="btn text-danger remove_this">Xóa</button>
+								</div>
+							</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="w-100 mt-3">
+					<div class="accordion">
+						<div class="card bg_orange w-100">
+							<div class="card_bank card-header d-flex justify-content-between align-items-center" id="heading_06">
+							<h5 class="my-auto mr-auto ml-3">Địa chỉ 2</h5>
+							<button class="btn border-0 text-right d-inline-block click_acc" type="button" data-toggle="collapse" data-target="#collapse_06">
+								<i class="fas fa-caret-left"></i>
+							</button>
+							
+							</div>
+			
+							<div id="collapse_06" class="collapse " aria-labelledby="heading_06">
+							<div class="card-body w-100">
+								<div class="my_address p-2">
+									<p>275 Võ Thị Sáu, phường Bình Thạnh, TPHCM</p>
+								</div>
+								<div class="d-flex justify-content-end mt-2">
+									<button class="btn btn-secondary editbtn">
+										Xác nhận
+									</button>
+								</div>
+								<div class="d-flex justify-content-end">
+									<p class="my-auto">Mặc định</p>
+									<input type="checkbox" class="my-auto">
+								</div>
+								<div class="d-flex justify-content-end">
+									<button class="btn text-danger edit_this">Sửa</button>
+									<button class="btn text-danger  remove_this">Xóa</button>
+								</div>
+							</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				</div>
+		</div>
+		<div class="tab-pane fade" id="nav-support" role="tabpanel">
+			<div class="col-12 col-xl-6 w-100 mx-auto">
+				<div class="d-flex flex-column mx-auto bg_orange p-5 my_second_profile">
+					<p>Tên tài khoản : Fix-satisfaction2970</p>
+					<p>E-mail : <span class="change_this p-1">noisycatcoon@gmail.com</span></p>
+					<p>Số điện thoại : <span class="change_this p-1">09852656463</span></p>
+					<p>Ngày sinh : <span class="change_this p-1">23/08/2001</span></p>
+					<div><button class="btn btn-secondary press_to_change ">Thay đổi thông tin</button><button class="btn btn-secondary press_again">Lưu thay đổi</button>
+						<button class="btn btn-danger">Thay đổi mật khẩu</button></div>
+				</div>
+			</div>
+		</div>
+	  </div>  
+</div>
+	  
+</div>
+
+ 
+	 <!-- FOOTER-BEGIN -->
+	 <div class="container-fluid v_footer mt-5">
+		<div class="row">
+		  <div
+			class="
+			  col-12 col-sm-12 col-md-3 col-lg-3
+			  cpl-xl-3
+			  text-white
+			  d-sm-none d-block
+			"
+		  >
+			<p class="text-center">Kết nối trực tiếp với chúng tôi</p>
+			<input
+			  type="email"
+			  class="v_email"
+			  placeholder="Điền email của bạn..."
+			/>
+			<br />
+			<br />
+			<a href="#" class="v_sent">Chúng tôi lắng nghe bạn!</a
+			><br /><br /><br /><br />
+		  </div>
+  
+		  <div class="col-6 col-sm-6 col-md-3 col-lg-3 cpl-xl-3 text-white">
+			<p class="v_gotham">Tìm hiểu</p>
+			<a href="aboutus.html" class="v_footerlink d-sm-block d-none"
+			  >Giới thiệu Fast&Delightful<br
+			/></a>
+			<a href="aboutus.html" class="v_footerlink d-sm-none d-block"
+			  >Giới thiệu<br /><br />Fast&Delightful<br /><br
+			/></a>
+			<div class="d-sm-none d-block v_cucai"></div>
+			<a href="../thu/menu.html" class="v_footerlink">Thực đơn</a><br />
+			<div class="d-sm-none d-block v_cucai"></div>
+			<a href="../huy/khuyenmai.html" class="v_footerlink">Khuyến mãi</a><br />
+			<div class="d-sm-none d-block v_cucai"></div>
+			<a href="../thu/ho_tro.html" class="v_footerlink">Hỗ trợ</a><br />
+		  </div>
+  
+		  <div class="col-6 col-sm-6 col-md-3 col-lg-3 cpl-xl-3 text-white">
+			<p class="v_gotham d-sm-block d-none">Cơ hội nghề nghiệp</p>
+			<p class="v_gotham d-sm-none d-block">Cơ hội<br />nghề nghiệp</p>
+			<a href="#" class="v_footerlink d-sm-block d-none"
+			  >Thông tin tuyển dụng<br
+			/></a>
+			<a href="#" class="v_footerlink d-sm-none d-block"
+			  >Thông tin<br /><br />tuyển dụng<br /><br
+			/></a>
+			<div class="d-sm-none d-block v_cucai"></div>
+			<a href="#" class="v_footerlink d-sm-block d-none"
+			  >Đầu tư doanh nghiệp<br
+			/></a>
+			<div class="d-sm-none d-block v_caithao"></div>
+			<a href="#" class="v_footerlink d-sm-none d-block"
+			  >Đầu tư<br /><br />doanh nghiệp<br /><br
+			/></a>
+			<div class="d-sm-none d-block v_cucai"></div>
+			<a href="#" class="v_footerlink">Khu vực TP.HCM</a><br />
+			<div class="d-sm-none d-block v_cucai"></div>
+			<a href="#" class="v_footerlink">Khu vực Hà Nội</a><br /><br />
+		  </div>
+  
+		  <div class="col-6 col-sm-6 col-md-3 col-lg-3 cpl-xl-3 text-white">
+			<div class="d-sm-block d-none">
+			  <p class="v_gotham">Chính sách và điều khoản</p>
+			  <a href="faqs.html" class="v_footerlink"
+				>Một số câu hỏi thường gặp</a
+			  ><br />
+			  <a href="#" class="v_footerlink">Điều khoản và điều kiện</a><br />
+			  <a href="#" class="v_footerlink">Chính sách về quyền riêng tư</a
+			  ><br />
+			  <a href="#" class="v_footerlink">Chính sách giải quyết khiếu nại</a
+			  ><br />
+			</div>
+  
+			<div class="d-sm-none d-block">
+			  <p class="v_gotham v_batd">Chính sách và<br />điều khoản</p>
+			  <a href="faqs.html" class="v_footerlink"
+				>Một số câu hỏi<br />thường gặp</a
+			  ><br />
+			  <div class="d-sm-none d-block v_cucai"></div>
+			  <a href="#" class="v_footerlink">Điều khoản và<br />điều kiện</a
+			  ><br />
+			  <div class="d-sm-none d-block v_cucai"></div>
+			  <a href="#" class="v_footerlink">Chính sách về quyền riêng tư</a
+			  ><br />
+			  <div class="d-sm-none d-block v_cucai"></div>
+			  <a href="#" class="v_footerlink d-sm-block d-none"
+				>Chính sách giải quyết khiếu nại<br
+			  /></a>
+			  <div class="d-sm-none d-block v_caithao"></div>
+			  <a href="#" class="v_footerlink d-sm-none d-block"
+				>Chính sách<br /><br />giải quyết<br /><br />khiếu nại<br /><br
+			  /></a>
+			</div>
+		  </div>
+  
+		  <div class="col-6 col-sm-6 col-md-3 col-lg-3 cpl-xl-3 text-white">
+			<p class="v_gotham v_batd d-sm-block d-none">Hình thức thanh toán</p>
+			<p class="v_gotham v_batd d-sm-none d-block">
+			  Hình thức<br />thanh toán
+			</p>
+			<p>COD/Thanh toán khi nhận hàng</p>
+  
+			<div class="row v_payment">
+			  <div class="col-6 col-sm-6 col-md-3 col-lg-3 cpl-xl-3">
+				<img
+				  src="img/mastercard.svg"
+				  class="w-100 v_payment"
+				/><br /><br />
+			  </div>
+  
+			  <div class="col-6 col-sm-6 col-md-3 col-lg-3 cpl-xl-3">
+				<img src="img/visacard.svg" class="w-100 v_payment" />
+			  </div>
+  
+			  <div class="col-6 col-sm-6 col-md-3 col-lg-3 cpl-xl-3">
+				<img src="img/logo-momo.png" class="w-100 v_payment" />
+			  </div>
+  
+			  <div class="col-6 col-sm-6 col-md-3 col-lg-3 cpl-xl-3">
+				<img src="img/zalo-pay.png" class="w-100 v_payment" />
+			  </div>
+			</div>
+		  </div>
+		</div>
+  
+		<br />
+  
+		<div class="v_line d-sm-block d-none"></div>
+  
+		<div class="d-sm-block d-none"><br /><br /></div>
+  
+		<div class="row">
+		  <div
+			class="col-12 col-sm-12 col-md-3 col-lg-3 cpl-xl-3 text-white v_ll"
+		  >
+			<p>Liên lạc</p>
+			<p>
+			  Hotline: 1900 0868<br />
+			  (Miễn phí, 8h-21h từ thứ 2 đến thứ 6)<br />
+			  Hotline: 1900 1269<br />
+			  (1.000đồng/phút, 8h30-21h<span class="d-sm-none d-block"></span>thứ
+			  7 và CN)
+			</p>
+		  </div>
+  
+		  <div class="col-12 col-sm-12 col-md-6 col-lg-6 cpl-xl-6 text-white">
+			<br />
+			<p>
+			  <span class="v_gotham">Địa chỉ 1:</span>&nbsp&nbsp&nbsp 223 Đ. Trần
+			  Hưng Đạo, P.Cô Giang, Q.1, TP.HCM<br />
+			  <span class="v_gotham">Địa chỉ 2:</span>&nbsp&nbsp&nbsp 53 Hồng Hà,
+			  Phường 2, Tân Bình, TP.HCM Q.1, TP.HCM<br />
+			  <span class="v_gotham">Địa chỉ 3:</span>&nbsp&nbsp&nbsp 744 Đ. La
+			  Thành, Thành Công, Ba Đình, Hà Nội<br />
+			  <span class="v_gotham">Địa chỉ 4:</span>&nbsp&nbsp&nbsp 41 Ngũ Hành
+			  Sơn, Bắc Mỹ Phú, Ngũ Hành Sơn, Đà Nẵng
+			</p>
+		  </div>
+  
+		  <div
+			class="
+			  col-12 col-sm-12 col-md-3 col-lg-3
+			  cpl-xl-3
+			  text-white
+			  d-sm-block d-none
+			"
+		  >
+			<p>Kết nối trực tiếp với chúng tôi</p>
+			<input
+			  type="email"
+			  class="v_email"
+			  placeholder="Điền email của bạn..."
+			/>
+			<br /><br />
+			<a href="#" class="v_sent">Chúng tôi lắng nghe bạn!</a>
+		  </div>
+		</div>
+	  </div>
+  
+	  <div class="v_copyright text-white d-sm-block d-none">
+		<p class="v_copyleft m-0">
+		  ©2017-2018 Fast&Delightful. All Rights Reserved.
+		</p>
+	  </div>
+  
+	  <div class="v_copyright text-white d-sm-none d-block">
+		<p class="v_copyleft m-0">
+		  ©2017-2018 Fast&Delightful. All Rights Reserved.
+		</p>
+	  </div>
+  
+	  <!-- FOOTER-END -->
+
+<!-- Hover menu trượt xuống -->
+	<script type="text/javascript" src="js/jquery.min.js"></script>
+	<script type="text/javascript" src="js/popper.js"></script>
+	<script type="text/javascript" src="js/bootstrap.min.js"></script>
+	<script type="text/javascript" src="slick/slick.min.js"></script>
+	<script type="text/javascript" src="js/custom.js"></script>
+</body>
+</html>

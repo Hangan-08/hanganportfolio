@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Ha Ngan</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.css" />
+    <link rel="stylesheet" type="text/css" href="slick/slick.css" />
+    <link rel="stylesheet" type="text/css" href="slick/slick-theme.css" />
+    <link rel="stylesheet" type="text/css" href="css/all.css" />
+    <link rel="stylesheet" type="text/css" href="fontawesome/css/all.min.css" />
+    <link rel="stylesheet" type="text/css" href="css/index.css" />
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  </head>
+  <body>
+      <div class="text-right h3 mr-5 mt-3 clickhere"><i class="fas fa-bars"></i><div class="toggle">
+          <ul class="mytitle d-flex flex-column">
+              <li><a href="index.html">Home</a></li>
+              <li><a href="abtme.html">About me</a></li>
+              <li><a href="products.html">My projects</a></li>
+              <li><a href="exp.html">Interesting experiences</a></li>
+              <li><a href="contact.html">Contact</a></li>
+              <li class="mt-3 align-self-center"><div class="span1">&times;</div></li>
+          </ul>
+      </div></div>
+    <div class="container p-5">
+        <div class="my_body d-flex align-items-center justify-content-between" data-aos="fade-up" data-aos-duration="1800">
+            <div class="home_text p-5">
+                <div class="mytitle h2">
+                    Hello, I'm Ha Ngan <br>
+                    <div class="reveal"><h2>Welcome to my portfolio</h2></div>
+                </div>
+            </div>
+            <div class="home_menu p-5">
+                <h3><a href="abtme.html" class="mytitle text-white hm_01  text-decoration-none">.about me</a></h3>
+                <h3><a href="products.html" class="mytitle text-white hm_02 text-decoration-none">.my projects</a></h3>
+                <h3><a href="exp.html" class="mytitle text-white hm_03 text-decoration-none">.interesting experiences</a></h3>
+                <h3><a href="contact.html" class="mytitle text-white hm_04 text-decoration-none">.contact</a></h3>
+            </div>
+        </div>
+    </div>
+    <script type="text/javascript" src="js/jquery.min.js"></script>
+    <script type="text/javascript" src="js/popper.js"></script>
+    <script type="text/javascript" src="js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="slick/slick.min.js"></script>
+    <script type="text/javascript" src="js/custom.js"></script>
+    <script>
+        AOS.init();
+    </script>
+    <script>
+        $('.clickhere').click(function(){
+            $('.toggle').toggleClass('overlay');
+        });
+        $('.span1').click(function(){
+            $('.toggle').toggleClass('hide');
+        });
+    </script>
+</body>
+</html>

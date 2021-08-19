@@ -1,0 +1,316 @@
+body{
+	background-image: url('pic/128807.png');
+	background-size: cover;
+	background-attachment: fixed;
+	font-family: Booster Next FY ;
+	font-size: 16px;
+	line-height: 24px;
+	margin: 0px;
+	padding:0px;
+}
+.menu{
+	width: 100%;
+	height: 115px;
+	background-color: black;
+	position: fixed;
+	top: 0;
+	z-index: 2;
+}
+.menu img{
+	margin: 10px 0px 10px 70px;
+	float: left;
+	display: inline-block;
+}
+.index{
+	position: absolute;
+	top: 25%;
+	left: 43%;
+}
+
+.index a:link, .index a:visited{
+	position: relative;
+	display: inline-block;
+	font-size: 17pt;
+	text-decoration: none;
+	border: 0px solid #d48883;
+	border-radius: 3px;
+	color: white;
+	padding:15px 20px;
+	overflow: hidden;
+}
+.index a:before{
+	background-color: #d48883;
+	content: "";
+	position: absolute;
+	top: 4%;
+	left: 43%;
+	z-index: -1;
+	transition:  1s;
+	width: 100%;
+	height: 0;
+	transform: translate(-50%,-50%) rotate(45deg);
+}
+.index a:hover:before{
+	height: 320%;
+}
+h1{
+	text-align: center;
+	margin-top: 80px;
+	margin-bottom: 50px;
+	color:black;
+}
+.container{
+	width: 100%;
+	height: 1700px;
+	display: block;
+	padding-top: 100px;
+	background-color: white;
+}
+.all{
+	width: 1170px;
+	height: 1350px;
+	margin-left: 144px;
+	font-size: 20pt;
+	line-height: 30pt;
+}
+.left{
+	position: relative;
+	padding: 4px;
+	width: 380px;
+	height: 1000px;
+
+	float: left;
+}
+.fpic{
+	position: relative;
+}
+.fpic image{
+	display: block;
+}
+
+.fpic2{
+	position: relative;
+	top: -10px;
+}
+.fpic2 image{
+	display: block;
+}
+
+.fpic3{
+	position: relative;
+	top: -20px;
+}
+.fpic3 image{
+	display: block;
+}
+
+
+.fpic4{
+	position: relative;
+	top: -30px;
+}
+.fpic4 image{
+	display: block;
+}
+
+
+/*this is a line*/
+.mid{
+	position: relative;
+	padding: 4px;
+	width: 380px;
+	height: 1000px;
+	padding-left: 2px;
+	float: left;
+}
+.mpic{
+	position: relative;
+}
+.mpic image{
+	display: block;
+}
+
+.mpic2{
+	position: relative;
+	top: -10px;
+}
+.mpic2 image{
+	display: block;
+}
+
+.mpic3{
+	position: relative;
+	top: -20px;
+}
+.mpic3 image{
+	display: block;
+}
+
+.mpic4{
+	position: relative;
+	top: -30px;
+}
+.mpic4 image{
+	display: block;
+}
+
+/*another line*/
+.right{
+	position: relative;
+	padding: 4px;
+	width: 380px;
+	height: 1000px;
+	padding-left: 2px;
+	float: left;
+}
+.rpic{
+	position: relative;
+}
+.rpic image{
+	display: block;
+}
+
+.rpic2{
+	position: relative;
+	top: -10px;
+}
+.rpic2 image{
+	display: block;
+}
+
+
+.rpic3{
+	position: relative;
+	top: -20px;
+}
+.rpic3 image{
+	display: block;
+}
+
+.rpic4{
+	position: relative;
+	top: -30px;
+}
+.rpic4 image{
+	display: block;
+}
+.overlay{
+	position: absolute;
+	top: 0px;
+	left: 0px;
+	display: flex;
+	width: 100%;
+	height: 97%;
+	align-items: center;
+	justify-content: center;
+	color: black;
+	opacity: 0;
+	transition: opacity 0.2s;
+	transform: translateY(20px);
+	transition: transform 0.2s;
+	backdrop-filter: blur(5px);
+}
+
+.overlay:hover {
+	opacity: 1;
+	transition: 0.7s ease;
+	transform: translateY(0px);
+}
+.page{
+	margin-top: 50px;
+	position: relative;
+	left: 700px;
+	height: 30px;
+	width: 30px;
+	background-color: #d48883;
+	border-radius: 50%;
+	display: inline-block;
+
+}
+.page .page1{
+ 	position: relative;
+ 	left: 11px;
+ 	top: 5px;
+ 	color: white;
+}
+a.page:link, a.page:visited{
+	text-decoration: none;
+}
+a.page:hover{
+	background-color: #6daca5;
+	transition: 0.8s;
+}
+.quotes{
+	width: 50%;
+		margin-top: 200px;
+	margin-bottom: 200px;
+	padding: 40px;
+	
+	margin-left: 360px;
+	background-color: rgba(255,255,255,0.3);
+	font-size: 24px;
+	line-height: 36px;
+}
+.source{
+	text-align: center;
+	font-weight: normal;
+	font-family: iciel helena;
+}
+.footer{
+	width: 100%;
+	height: 300px;
+	background-color: white;
+	
+}
+.footer .ind{
+	padding-top: 100px;
+	padding-left: 210px;
+	line-height: 30px;
+}
+.leftind{
+	width: 200px;
+	float: left;
+	text-align: right;
+}
+.leftind a:link, .leftind a:visited{
+	
+	text-decoration: none;
+	color: black;
+}
+.rightind{
+	float: left;
+	border-left: 1px solid black;
+	padding-left: 15px;
+	margin-left: 15px;
+}
+.rightind a:link, .rightind a:visited{
+	text-align: right;
+	text-decoration: none;
+	color: black;
+}
+.footer .ind a:hover{
+	color: #6daca5;
+	transition: 0.3s;
+}
+.footer .flg img{
+	position: relative;
+	left: 20px;
+	top: -20px;
+	float: left;
+}
+.icon{
+	margin-left: 100px;
+	float: left;
+}
+.icon .ins{
+	position: relative;
+	left: 20px;
+}
+.icon .twt{
+	position: relative;
+	left: 35px;
+	top: 0px;
+}
+.footer p{
+	text-align: center;
+}
