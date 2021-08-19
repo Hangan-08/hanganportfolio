@@ -1,0 +1,226 @@
+body{
+	background-image: url('pic/128807.png');
+	background-size: cover;
+	background-attachment: fixed;
+	font-family: Booster Next FY ;
+	font-size: 16px;
+	line-height: 24px;
+	margin: 0px;
+	padding:0px;
+}
+.menu{
+	width: 100%;
+	height: 115px;
+	background-color: black;
+	position: fixed;
+	top: 0;
+	z-index: 2;
+}
+.menu img{
+	margin: 10px 0px 10px 70px;
+	float: left;
+	display: inline-block;
+}
+.index{
+	position: absolute;
+	top: 25%;
+	left: 43%;
+}
+
+.index a:link, .index a:visited{
+	position: relative;
+	display: inline-block;
+	font-size: 17pt;
+	text-decoration: none;
+	border: 0px solid #d48883;
+	border-radius: 3px;
+	color: white;
+	padding:15px 20px;
+	overflow: hidden;
+}
+.index a:before{
+	background-color: #d48883;
+	content: "";
+	position: absolute;
+	top: 4%;
+	left: 43%;
+	z-index: -1;
+	transition:  1s;
+	width: 100%;
+	height: 0;
+	transform: translate(-50%,-50%) rotate(45deg);
+}
+.index a:hover:before{
+	height: 320%;
+}
+.title{
+	position: absolute;
+	top: 70%;
+	left: 20%;
+	z-index: 1;
+}
+.title a:link, .title a:visited{
+	position: relative;
+	display: inline-block;
+	color: white;
+	text-decoration: none;
+	border: 0px solid #d48883;
+	font-size: 24pt;
+	font-weight: bold;
+	border-radius: 5px;
+	padding: 15px 20px;
+	overflow: hidden;
+	
+}
+.title a:before{
+	display: inline-block;
+	content: "";
+	position: absolute;
+	top: -55%;
+	left: -16%;
+	background-color: #d48883;
+	width: 0;
+	height: 180%;
+	transition: 1s ease;
+	z-index: -1;
+
+}
+.title a:hover:before{
+	z-index: -1;
+	width: 130%;
+}
+html{
+	scroll-behavior: smooth;
+}
+.textbody {
+	background-color: white;
+	margin-top: -20px;
+	padding: 80px 300px 20px 300px;
+
+}
+.textbody .me img{
+	margin-left: 345px;
+	
+	border-radius: 50%;
+	border-image: 1px;
+}
+.textbody .name{
+	text-align: center;
+}
+.spc{
+	font-family: iciel helena;
+	font-size: 20pt;
+	color: #d48883;
+}
+.puppy img{
+	margin-top: 20px;
+	float: left;
+	border: 10px solid #d48883;
+	transform: rotate(7deg);
+	margin-right:  40px;
+
+}
+.textbody_02{
+	background-image: url('pic/bgrpattern.png');
+	background-position: 120% 40%;
+	margin-top: -5px;
+	background-color: #d48883;
+	padding: 100px 300px 110px 300px;
+}
+.textbody_02 h3{
+	text-align: right;
+}
+.textbody_02 img{
+	float: right;
+	border: 10px solid white;
+	margin-left: 30px;
+}
+.flow1{
+	text-align: right;
+	margin-top: 180px;
+}
+.flow{
+	font-family: iciel helena;
+}
+.flow a:link, .flow a:visited{
+	text-decoration: none;
+	color: black;
+}
+.flow a:hover{
+	color: #49746f;
+	transition: 0.2s;
+}
+.quotes{
+	width: 50%;
+		margin-top: 200px;
+	margin-bottom: 200px;
+	padding: 40px;
+	
+	margin-left: 360px;
+	background-color: rgba(255,255,255,0.3);
+	font-size: 24px;
+	line-height: 36px;
+}
+.source{
+	text-align: center;
+	font-weight: normal;
+	font-family: iciel helena;
+}
+.footer{
+	width: 100%;
+	height: 300px;
+	background-color: white;
+	
+}
+.footer .ind{
+	padding-top: 100px;
+	padding-left: 210px;
+	line-height: 30px;
+}
+.leftind{
+	width: 200px;
+	float: left;
+	text-align: right;
+}
+.leftind a:link, .leftind a:visited{
+	
+	text-decoration: none;
+	color: black;
+}
+.rightind{
+	float: left;
+	border-left: 1px solid black;
+	padding-left: 15px;
+	margin-left: 15px;
+}
+.rightind a:link, .rightind a:visited{
+	text-align: right;
+	text-decoration: none;
+	color: black;
+}
+.footer .ind a:hover{
+	color: #6daca5;
+	transition: 0.3s;
+}
+.footer .flg img{
+	position: relative;
+	left: 20px;
+	top: -20px;
+	float: left;
+}
+.icon{
+	margin-left: 100px;
+	float: left;
+}
+.icon .ins{
+	position: relative;
+	left: 20px;
+}
+.icon .twt{
+	position: relative;
+	left: 35px;
+	top: 0px;
+}
+.footer p{
+	text-align: center;
+}
